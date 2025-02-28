@@ -1,5 +1,5 @@
 body {
-    background: url('Assets SoftEng/background gelap.jpg') fixed;
+  background: url('../Assets SoftEng/background.jpg') no-repeat center center fixed;
     background-size: cover;
     font-family: Arial, sans-serif;
     color: #ffffff;
