@@ -15,10 +15,11 @@
                 <img src="{{ asset('Assets SoftEng/TOPUPKU LOGO.png') }}" alt="TopUpKu Logo">
             </div>
             <ul class="navigationBtn">
-                <li><a>HOME</a></li>
-                <li><a>PRODUCTS</a></li>
-                <li><a>CART</a></li>
-                <li><a>CONTACT US</a></li>
+                <li><a href="/" class="active">HOME</a></li>
+                <li><a href="/">PRODUCTS</a></li>
+                <li><a href="{{ route('cart') }}">CART</a></li>
+                <li><a href="/">CONTACT US</a></li>
+                <li><img src="{{ asset('Assets SoftEng/user logo.png') }}" alt="User Logo"></li>
             </ul>
         </nav>
     </div>
