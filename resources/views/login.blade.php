@@ -30,12 +30,10 @@
                 <label for="password">Password</label>
                 <input type="password" name="password" id="password" placeholder="Password" required>
             </div>
-            <input type="submit" class="btn" value="SUBMIT" name="SUBMIT">
+            <input type="submit" class="btn" value="LOGIN" name="LOGIN">
             <div class="links">
                 <p>Belum punya akun?</p>
-                <button id="registerButton">Register 
-                    <href><login class="html"></login></href>
-                </button>
+                <a href="{{ route('register') }}">Register</a>
             </div>
         </form>
     </div>

@@ -26,10 +26,10 @@
                 <label for="password">Password</label>
                 <input type="password" name="password" id="password" placeholder="Password" required>
             </div>
-            <input type="submit" class="btn" value="Sign Up" name="signUp">
+            <input type="submit" class="btn" value="REGISTER" name="REGISTER">
             <div class="links">
-                <p>Sudah punya akun?</p>
-                <button id="loginButton">Log In</button>
+                <p>Sudah punya Akun?</p>
+                <a href="{{ route('login') }}">Login</a>
             </div>
         </form>
     </div>
