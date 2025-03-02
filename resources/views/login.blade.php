@@ -3,19 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register</title>
+    <title>Login</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <link rel="stylesheet" href="css/login.css">
 </head>
 <body>
-    <nav class="navbar">
-        <div class="navbar-logo">
-            <img src="Assets SoftEng/TOPUPKU LOGO.png" alt="Logo Website">
+    <nav class="wrapperNav">
+        <div class="logo">
+            <img src='Assets SoftEng/TOPUPKU LOGO.png' alt="TopUpKu Logo">
         </div>
-        <div class="navbar-profile">
-            <i class="fas fa-user"></i>
-            <button id="profileButton"></button>
-        </div>
+        <ul class="navigationBtn">
+            <li>
+                <button class="user-btn">
+                    <i class="fas fa-user" alt="User Logo"></i>
+                </button>
+            </li>
+        </ul>
     </nav>
     <div class="container" id = "signup">
         <h1 class="form-title">Log In</h1>
@@ -37,6 +40,13 @@
             </div>
         </form>
     </div>
-    <script src="script.js"></script>
+    <nav class="footerNav">
+        <p>Support Us</p>
+        <div class="social-icons">
+            <a href="https://wa.me/" target="_blank"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
+        </div>
+    </nav>
+    <script src="js/script.js"></script>
 </body>
 </html>

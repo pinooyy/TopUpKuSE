@@ -1,5 +1,5 @@
 body {
-    background: url('../Assets SoftEng/background.jpg') no-repeat center center fixed;
+    background: url('../Assets SoftEng/background gelap.jpg') no-repeat center center fixed;
     background-size: cover;
     font-family: Arial, sans-serif;
     color: #ffffff;
@@ -11,36 +11,66 @@ body {
     overflow: hidden;
   }
   
-  .navbar {
+  .wrapperNav {
     position: fixed;
+    padding : 15px;
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 1000; 
-    justify-content: space-between;
-    align-items: center;
+    height: 50px;
     background-color: rgba(0, 0, 0, 0.5);
-    padding: 5px ;
-    /* color: white; */
-  }
-  
-  .navbar-logo img {
-    height: 40px;
-  }
-  
-  .navbar-profile button {
-    background-color: #ff5e00;
-    color: white;
-    border: none;
-    padding: 20px;
-    cursor: pointer;
-    border-radius: 50%;
-    float: right;
-  }
-  
-  .navbar-profile button:hover {
-    background-color: #933300;
-  }
+    box-shadow: 0 7px 15px 0 rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 15px;
+    z-index: 1000;
+}
+
+.logo img {
+    max-width: 150px; 
+    height: auto; 
+}
+
+.navigationBtn {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    gap: 10px;
+    
+}
+.navigationBtn > li {
+    list-style-type: none;
+    padding: 35px;
+    display: flex;
+    align-items: center;
+}
+
+.user-btn {
+  background-color: #ff5e00;
+  border: none;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  padding: 5px;
+  overflow: hidden;
+}
+
+.user-btn i{
+  position: absolute;
+  top : 34px;
+  transform: scale(1.8);
+  color: #ffffff;
+}
+
+.user-btn:hover {
+  background-color: #933300;
+  transition: background-color 0.3s ease-in-out;
+}
   
   .container {
     background: rgba(0, 0, 0, 0.5);
@@ -69,7 +99,7 @@ body {
     top: 67%;
     left: 10px;
     transform: translateY(-50%);
-    color: #000000;
+    color: #ffffff;
   }
   
   .input-group label {
@@ -84,13 +114,13 @@ body {
     padding: 0.8rem 0.8rem 0.8rem 2.5rem;
     border: none;
     border-radius: 4px;
-    background: #ffffffad;
-    color: #000000;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #ffffff;
     font-size: 1rem;
   }
   
   .input-group input::placeholder {
-    color: #5c5c5c;
+    color: rgba(255, 255, 255, 0.5);
   }
   
   .input-group input:focus {
@@ -123,6 +153,15 @@ body {
     margin: 0;
     color: #ffffff;
   }
+
+  .links a {
+    margin: 0;
+    color: #ff5e00;
+  }
+
+  .links a:hover {
+    color: #933300;
+}
   
   #registerButton {
     background: none;
@@ -136,3 +175,38 @@ body {
   #registerButton:hover {
     color: #933300;
   }
+
+  .footerNav {
+    position: fixed;
+    padding : 15px;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    background-color: rgba(0, 0, 0, 0.85);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    font-size: 16px;
+    color: #ff5e00;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+
+.footerNav p {
+    margin: 0;
+    font-weight: bold;
+}
+
+.social-icons a {
+    color: white;
+    font-size: 55px;
+    text-decoration: none;
+    margin: 0 10px;
+    transition: color 0.3s;
+}
+
+.social-icons a:hover {
+    color: #ff5e00; /* Warna oranye saat hover */
+}
