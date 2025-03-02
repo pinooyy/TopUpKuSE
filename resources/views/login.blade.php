@@ -22,11 +22,11 @@
     </nav>
     <div class="container" id = "signup">
         <h1 class="form-title">Log In</h1>
-        <form method="post" action="">
+        <form id="loginForm">
             <div class="input-group">
                 <i class="fas fa-user"></i>
                 <label for="fname">Username</label>
-                <input type="text" name="fName" id="fName" placeholder="Username" required>
+                <input type="text" name="fName" id="username" placeholder="Username" required>
             </div>
             <div class="input-group">
                 <i class="fas fa-lock"></i>
