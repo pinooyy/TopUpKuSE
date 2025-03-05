@@ -1,5 +1,5 @@
 body {
-    background-color: rgb(99, 175, 184);
+    background-color: rgb(17, 18, 35);
     background-size: cover;
     font-family: Arial, sans-serif;
     color: #ffffff;
@@ -30,6 +30,7 @@ body {
 .logo img {
     max-width: 150px; 
     height: auto; 
+    padding-left: 50px;
 }
 
 .navigationBtn {
@@ -37,6 +38,7 @@ body {
     justify-content: center;
     align-content: center;
     gap: 10px;
+    padding-right: 50px;
     
 }
 .navigationBtn > li {
@@ -55,6 +57,7 @@ body {
 
 .navigationBtn > li > a:hover {
     color: orange;
+    text-decoration: underline;
     transition: all 0.3s ease-in-out;
 }
 
@@ -64,7 +67,7 @@ body {
 
 }
 .active {
-    background-color: rgb(40, 40, 40);
+    background-color: rgba(50, 50, 50, 0.5);
     color: white;
     padding: 15px;
     border-radius: 5px;
@@ -101,5 +104,100 @@ body {
   
 
 
-  
- 
+/*HOME PAGE*/
+header {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    overflow: hidden; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+header:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: 0.5;
+    z-index: 2; 
+}
+
+#bg-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    z-index: 0; 
+}
+
+.video-info {
+    position: relative;
+    z-index: 3; 
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 2000px;
+    color: white;
+   
+}
+
+.logo-video {
+    flex: 1;
+    padding-left: 200px;
+    text-align: left;
+}
+
+.logo-video img {
+    max-width: 300%; 
+}
+
+.video-text {
+    flex: 2;
+    text-align: right;
+    
+}
+
+.video-text h1 {
+    font-size: 5em;
+    font-weight: bold;
+    color: white;
+    text-align: left;
+    padding-left: 25px;
+    line-height: 0.5;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.video-text p {
+    font-size: 1.2em;
+    line-height: 1.6;
+    color: #ddd;
+    text-align: right;
+    line-height: 0.5;
+    padding-right: 200px;
+}
+
+.btn-container {
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 200px;
+}
+
+.btn-product {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #ff6600;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    margin-top: 1em;
+}
