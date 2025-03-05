@@ -52,5 +52,24 @@
     </header>
     
 
+    <footer>
+        <div class="footer-container">
+                <h2>TopUpKu</h2>
+                <div class="footer-menu-container">
+                    <ul>
+                        <li><a href="home.html">HOME</a></li>
+                        <li><a href="ourProducts.html">PRODUCTS</a></li>
+                        <li><a href="testimoni.html">CART</a></li>
+                        <li><a href="aboutUs.html">CONTACT US</a></li>
+                    </ul>
+                </div>
+                <div class="social-icons">
+                    <a href="https://wa.me/" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                    <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
+                </div>
+                <p>copyright @2025 - TopUpKu | design by Kelompok 7</p>
+        </div>
+    </footer>
+
 </body>
 </html>

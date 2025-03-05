@@ -4,13 +4,12 @@ body {
     font-family: Arial, sans-serif;
     color: #ffffff;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
+    flex-direction: column;
+    min-height: 100vh; 
     margin: 0;
-    overflow: hidden;
-  }
-  
+    overflow: auto; /* Pastikan scroll bisa digunakan */
+}
+
   .wrapperNav {
     position: fixed;
     padding : 15px;
@@ -152,12 +151,12 @@ header:after {
 
 .logo-video {
     flex: 1;
-    padding-left: 200px;
+    padding-left: 150px;
     text-align: left;
 }
 
 .logo-video img {
-    max-width: 300%; 
+    max-width: 200%; 
 }
 
 .video-text {
@@ -167,28 +166,28 @@ header:after {
 }
 
 .video-text h1 {
-    font-size: 5em;
+    font-size: 3em;
     font-weight: bold;
     color: white;
     text-align: left;
-    padding-left: 25px;
+    padding-left: 70px;
     line-height: 0.5;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .video-text p {
-    font-size: 1.2em;
+    font-size: 15px;
     line-height: 1.6;
     color: #ddd;
     text-align: right;
     line-height: 0.5;
-    padding-right: 200px;
+    padding-right: 150px;
 }
 
 .btn-container {
     display: flex;
     justify-content: flex-end;
-    padding-right: 200px;
+    padding-right: 150px;
 }
 
 .btn-product {
@@ -201,3 +200,77 @@ header:after {
     border-radius: 5px;
     margin-top: 1em;
 }
+
+.btn-product:hover {
+    background-color:#933300;
+    transition: background-color 0.3s ease;
+}
+
+/* FOOTER*/
+footer {
+    background-color: #121212; 
+    color: white; 
+    text-align: center;
+    padding: 20px 0;
+    width: 100%;
+    position: relative;
+    bottom: 0;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-container h2 {
+    margin-bottom: 10px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.footer-menu-container ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 20px; 
+}
+
+.footer-menu-container ul li {
+    display: inline;
+}
+
+.footer-menu-container ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.footer-menu-container ul li a:hover {
+    color: #ffcc00; 
+}
+
+/* Social Icons */
+.social-icons {
+    margin-top: 10px;
+}
+
+.social-icons a {
+    color: white;
+    font-size: 24px;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: #ffcc00;
+}
+
+.footer-container p {
+    margin-top: 10px;
+    font-size: 14px;
+}
+
