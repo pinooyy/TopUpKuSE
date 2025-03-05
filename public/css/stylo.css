@@ -1,0 +1,105 @@
+body {
+    background-color: rgb(99, 175, 184);
+    background-size: cover;
+    font-family: Arial, sans-serif;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    overflow: hidden;
+  }
+  
+  .wrapperNav {
+    position: fixed;
+    padding : 15px;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    background-color: rgba(0, 0, 0, 0.5);
+    box-shadow: 0 7px 15px 0 rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 15px;
+    z-index: 1000;
+}
+
+.logo img {
+    max-width: 150px; 
+    height: auto; 
+}
+
+.navigationBtn {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    gap: 10px;
+    
+}
+.navigationBtn > li {
+    list-style-type: none;
+    padding: 35px;
+    display: flex;
+    align-items: center;
+}
+
+.navigationBtn > li > a {
+    text-decoration: none;
+    color: white;
+    display: flex;
+    align-items: center;
+}
+
+.navigationBtn > li > a:hover {
+    color: orange;
+    transition: all 0.3s ease-in-out;
+}
+
+.active:hover {
+    color: white !important;
+    transition: all 0.3s ease-in-out;
+
+}
+.active {
+    background-color: rgb(40, 40, 40);
+    color: white;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+.active:hover {
+    color: white !important;
+}
+.user-btn {
+  background-color: #ff5e00;
+  border: none;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  padding: 5px;
+  overflow: hidden;
+}
+
+.user-btn i{
+  position: absolute;
+  top : 34px;
+  transform: scale(1.8);
+  color: #ffffff;
+}
+
+.user-btn:hover {
+  background-color: #933300;
+  transition: background-color 0.3s ease-in-out;
+}
+  
+
+
+  
+ 
