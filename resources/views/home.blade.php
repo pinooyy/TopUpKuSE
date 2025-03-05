@@ -18,8 +18,8 @@
                 <img src='Assets SoftEng/TOPUPKU_LOGO_WHITE.png' alt="TopUpKu_Logo_White">
             </div>
             <ul class="navigationBtn">
-                <li><a href="{{ url('/') }}" class="active">HOME</a></li>
-                <li><a href="/">PRODUCTS</a></li>
+                <li><a href="{{ url('home') }}" class="active">HOME</a></li>
+                <li><a href="{{ route('shop') }}">PRODUCTS</a></li>
                 <li><a href="{{ route('cart') }}">CART</a></li>
                 <li><a href="/">CONTACT US</a></li>
                 <li>
