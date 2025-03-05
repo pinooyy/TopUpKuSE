@@ -10,7 +10,7 @@
 <body>
     <nav class="wrapperNav">
         <div class="logo">
-            <img src='Assets SoftEng/TOPUPKU LOGO.png' alt="TopUpKu Logo">
+            <img src='Assets SoftEng/TOPUPKU_LOGO_WHITE.png' alt="TopUpKu_Logo_White">
         </div>
         <ul class="navigationBtn">
             <li>
