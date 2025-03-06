@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Top-Up</title>
+    <title>TopUpKu</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <link rel="stylesheet" href="../css/shop.css">
 </head>
@@ -14,7 +14,7 @@
                 <img src='Assets SoftEng/TOPUPKU_LOGO_WHITE.png' alt="TopUpKu_Logo_White">
             </div>
             <ul class="navigationBtn">
-                <li><a href="{{ url('home') }}">HOME</a></li>
+                <li><a href="{{ url('/') }}">HOME</a></li>
                 <li><a href="{{ route('shop') }}" class="active">PRODUCTS</a></li>
                 <li><a href="{{ route('cart') }}">CART</a></li>
                 <li><a href="/">CONTACT US</a></li>
