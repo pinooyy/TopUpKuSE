@@ -1,18 +1,17 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AuthManager;
 
-Route::get('/home', function () {
+Route::get('/', function () {
     return view('home');
 })->name('home');
 
-Route::get('/register', function () {
-    return view('register');
-})->name('register');
-
-Route::get('/login', function () {
-    return view('login');
-})->name('login');
+Route::get('/register', [AuthManager::class, 'register'])->name('register');
+Route::post('/register', [AuthManager::class, 'registerPost'])->name('register.post');
+Route::get('/login', [AuthManager::class, 'login'])->name('login');
+Route::post('/login', [AuthManager::class, 'loginPost'])->name('login.post');
+Route::get('/logout', [AuthManager::class, 'logout'])->name('logout');
 
 Route::get('/cart', function () {
     return view('cart');

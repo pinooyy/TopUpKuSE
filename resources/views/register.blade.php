@@ -8,13 +8,14 @@
     <link rel="stylesheet" href="css/register.css">
 </head>
 <body>
-    <div class="container" id = "signup">
+    <div class="container" id="signup">
         <h1 class="form-title">Register</h1>
-        <form method="post" action="">
+        <form action="{{ route('register.post') }}" method="post">
+            @csrf
             <div class="input-group">
                 <i class="fas fa-user"></i>
-                <label for="fname">Nama Lengkap</label>
-                <input type="text" name="fName" id="fName" placeholder="Nama Lengkap" required>
+                <label for="fname">Username</label>
+                <input type="text" name="username" id="username" placeholder="Username" required>
             </div>
             <div class="input-group">
                 <i class="fas fa-envelope"></i>
@@ -30,6 +31,23 @@
             <div class="links">
                 <p>Sudah punya Akun?</p>
                 <a href="{{ route('login') }}">Login</a>
+            </div>
+            <div class="mt-5">
+                @if ($errors->any())
+                 <div class="col-12">
+                    @foreach ($errors->all() as $errors)
+                        <div class="alert alert-danger">{{ $errors }}</div>
+                    @endforeach
+                </div>
+                @endif
+        
+                @if (session()->has('error'))
+                    <div class="alert alert-danger">{{session('error')}}</div>
+                @endif
+        
+                @if (session()->has('success'))
+                    <div class="alert alert-success">{{session('success')}}</div>
+                @endif
             </div>
         </form>
     </div>

@@ -22,21 +22,39 @@
     </nav>
     <div class="container" id = "signup">
         <h1 class="form-title">Log In</h1>
-        <form id="loginForm">
+        <form action="{{ route('login.post') }}" method="post" id="loginForm">
+            @csrf
             <div class="input-group">
                 <i class="fas fa-user"></i>
                 <label for="fname">Username</label>
-                <input type="text" name="fName" id="username" placeholder="Username" required>
+                <input type="text" name="username" id="username" placeholder="Username" required>
             </div>
             <div class="input-group">
                 <i class="fas fa-lock"></i>
                 <label for="password">Password</label>
-                <input type="password" name="password" id="password" placeholder="Password" required>
+                <input type="password" name="password" id="password" placeholder="password" required>
             </div>
             <input type="submit" class="btn" value="LOGIN" name="LOGIN">
             <div class="links">
                 <p>Belum punya akun?</p>
                 <a href="{{ route('register') }}">Register</a>
+            </div>
+            <div class="mt-5">
+                @if ($errors->any())
+                 <div class="col-12">
+                    @foreach ($errors->all() as $errors)
+                        <div class="alert alert-danger">{{ $errors }}</div>
+                    @endforeach
+                </div>
+                @endif
+    
+                @if (session()->has('error'))
+                    <div class="alert alert-danger">{{session('error')}}</div>
+                @endif
+    
+                @if (session()->has('success'))
+                    <div class="alert alert-success">{{session('success')}}</div>
+                @endif
             </div>
         </form>
     </div>
