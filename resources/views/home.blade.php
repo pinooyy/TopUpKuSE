@@ -18,10 +18,10 @@
                 <img src='Assets SoftEng/TOPUPKU_LOGO_WHITE.png' alt="TopUpKu_Logo_White">
             </div>
             <ul class="navigationBtn">
-                <li><a href="{{ url('/') }}" class="active">HOME</a></li>
-                <li><a href="{{ route('product') }}">PRODUCTS</a></li>
+                <li><a href="#home">HOME</a></li>
+                <li><a href="#products">PRODUCTS</a></li>
                 <li><a href="{{ route('cart') }}">CART</a></li>
-                <li><a href="/">CONTACT US</a></li>
+                <li><a href="{{ route('contactus') }}">CONTACT US</a></li>
                 <li>
                     <button class="user-btn">
                         <i class="fas fa-user" alt="User Logo"></i>
@@ -30,7 +30,7 @@
             </ul>
         </nav>
     </div>
-    <header>
+    <header id="home">
         <video id="bg-video" poster="Assets SoftEng/home_thumbnail.png" autoplay loop muted>
             <source src="Assets SoftEng/home_background.mp4" type="video/mp4">
             
@@ -53,29 +53,29 @@
         </div>
     </header>
 
-    <div class="product-container">
-        <h1>Top-Up.</h1>
+    <div class="product-container" id="products">
+        <h1>"PRODUCTS"</h1>
         <input type="text" class="search-box" placeholder="Search product...">
         <div class="product-grid">
             <div class="product">
                 <a href="{{ route('genshin') }}"><img src="../Assets SoftEng/genshin_product.png" alt="Genshin Impact"></a>
-                <p>GENSHIN IMPACT (VIA UID)</p>
+                <p>GENSHIN IMPACT</p>
             </div>
             <div class="product">
                 <a href="{{ route('hsr') }}"><img src="../Assets SoftEng/hsr_product.png" alt="Honkai Star Rail"></a>
-                <p>HONKAI: STAR RAIL (VIA UID)</p>
+                <p>HONKAI: STAR RAIL</p>
             </div>
             <div class="product">
                 <a href="{{ route('mole') }}"><img src="../Assets SoftEng/mole_product.webp" alt="Mobile Legends"></a>
-                <p>MOBILE LEGENDS : BANG BANG (VIA UID)</p>
+                <p>MOBILE LEGENDS : BANG BANG</p>
             </div>
             <div class="product">
                 <a href="{{ route('pubg') }}"><img src="../Assets SoftEng/pubgm_product.png" alt="Player Unknown's Battlegrounds"></a>
-                <p>Player Unknown's Battlegrounds (VIA UID)</p>
+                <p>Player Unknown's Battlegrounds</p>
             </div>
             <div class="product">
                 <a href="{{ route('wuwa') }}"><img src="../Assets SoftEng/wuwa_product.png" alt="Wuthering Waves"></a>
-                <p>WUTHERING WAVES (FLASH SALE)</p>
+                <p>WUTHERING WAVES</p>
             </div>
             <div class="product">
                 <a href="{{ route('valo') }}"><img src="../Assets SoftEng/valorant_product.png" alt="Valorant"></a>
@@ -83,11 +83,11 @@
             </div>
             <div class="product">
                 <a href="{{ route('steam') }}"><img src="../Assets SoftEng/steam_product.png" alt="Steam"></a>
-                <p>STEAM (IDR)</p>
+                <p>STEAM</p>
             </div>
             <div class="product">
                 <a href="{{ route('epep') }}"><img src="../Assets SoftEng/epep_product.jpg" alt="Free Fire"></a>
-                <p>FREE FIRE (VIA UID)</p>
+                <p>FREE FIRE</p>
             </div>
         </div>
     </div>
@@ -98,10 +98,10 @@
                 <h2>TopUpKu</h2>
                 <div class="footer-menu-container">
                     <ul>
-                        <li><a href="home.html">HOME</a></li>
-                        <li><a href="ourProducts.html">PRODUCTS</a></li>
-                        <li><a href="testimoni.html">CART</a></li>
-                        <li><a href="aboutUs.html">CONTACT US</a></li>
+                        <li><a href="{{ url('home') }}#home">HOME</a></li>
+                        <li><a href="{{ url('home') }}#products">PRODUCTS</a></li>
+                        <li><a href="{{ route('cart') }}">CART</a></li>
+                        <li><a href="{{ route('contactus') }}">CONTACT US</a></li>
                     </ul>
                 </div>
                 <div class="social-icons">

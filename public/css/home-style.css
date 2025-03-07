@@ -1,3 +1,7 @@
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     background-color: rgb(17, 18, 35);
     background-size: cover;
@@ -32,6 +36,14 @@ body {
     padding-left: 50px;
 }
 
+.navigationBtn a {
+    text-decoration: none;
+    padding: 10px 15px;
+    color: white;
+    transition: 0.3s;
+}
+
+
 .navigationBtn {
     display: flex;
     justify-content: center;
@@ -59,7 +71,7 @@ body {
     text-decoration: underline;
     transition: all 0.3s ease-in-out;
 }
-
+/* 
 .active:hover {
     color: white !important;
     transition: all 0.3s ease-in-out;
@@ -70,11 +82,8 @@ body {
     color: white;
     padding: 15px;
     border-radius: 5px;
-}
+} */
 
-.active:hover {
-    color: white !important;
-}
 .user-btn {
   background-color: #ff5e00;
   border: none;
@@ -208,13 +217,15 @@ header:after {
 
 /*PRODUCTS*/
 .product-container {
-    padding : 2rem;
+    padding-top: 50px;
     width : 100%;
     max-width: 1000px;
     margin: auto;
+    text-align: center;
 }
 
-.product-container h1 { /* JUDUL Top-Up */
+
+.product-container h1 { 
     font-size: 2.5em;
     margin-bottom: 20px;
     color : #ff5e00;
@@ -222,6 +233,7 @@ header:after {
 }
 
 .search-box {
+    color: white;
     width: 80%;
     padding: 10px;
     font-size: 1em;
@@ -233,6 +245,7 @@ header:after {
 }
 
 .product-grid {
+    padding: 20px 0 70px 0;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     gap: 20px;
@@ -240,8 +253,8 @@ header:after {
 }
 
 .product {
-    background-color: transparent;
-    padding: 15px;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px;
     border-radius: 10px;
     text-align: center;
 }
@@ -335,4 +348,3 @@ footer {
     margin-top: 10px;
     font-size: 14px;
 }
-

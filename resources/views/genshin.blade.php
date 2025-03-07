@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TopUpKu | Genshin Impact</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-    <link rel="stylesheet" href="../css/product.css">
+    <link rel="stylesheet" href="../css/product-detail.css">
 </head>
 <body>
     <div class="navContainer">
@@ -14,10 +14,10 @@
                 <img src='Assets SoftEng/TOPUPKU_LOGO_WHITE.png' alt="TopUpKu_Logo_White">
             </div>
             <ul class="navigationBtn">
-                <li><a href="{{ url('home') }}">HOME</a></li>
-                <li><a href="{{ route('shop') }}" class="active">PRODUCTS</a></li>
+                <li><a href="{{ url('home') }}#home">HOME</a></li>
+                <li><a href="{{ url('home') }}#products">PRODUCTS</a></li>
                 <li><a href="{{ route('cart') }}">CART</a></li>
-                <li><a href="/">CONTACT US</a></li>
+                <li><a href="{{ route('contactus') }}">CONTACT US</a></li>
                 <li>
                     <button class="user-btn">
                         <i class="fas fa-user" alt="User Logo"></i>
@@ -62,10 +62,10 @@
                 <h2>TopUpKu</h2>
                 <div class="footer-menu-container">
                     <ul>
-                        <li><a href="home.html">HOME</a></li>
-                        <li><a href="ourProducts.html">PRODUCTS</a></li>
-                        <li><a href="testimoni.html">CART</a></li>
-                        <li><a href="aboutUs.html">CONTACT US</a></li>
+                        <li><a href="{{ url('home') }}#home">HOME</a></li>
+                        <li><a href="{{ url('home') }}#products">PRODUCTS</a></li>
+                        <li><a href="{{ route('cart') }}">CART</a></li>
+                        <li><a href="{{ route('contactus') }}">CONTACT US</a></li>
                     </ul>
                 </div>
                 <div class="social-icons">

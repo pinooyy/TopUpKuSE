@@ -22,6 +22,10 @@ Route::get('/product', function () {
     return view('product');
 })->name('product');
 
+Route::get('/contactus', function () {
+    return view('contactus');
+})->name('contactus');
+
 Route::get('/genshin', function () {
     return view('genshin');
 })->name('genshin');

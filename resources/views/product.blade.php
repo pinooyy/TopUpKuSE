@@ -15,7 +15,7 @@
             </div>
             <ul class="navigationBtn">
                 <li><a href="{{ route('home') }}">HOME</a></li>
-                <li><a href="{{ route('product') }}" class="active">PRODUCTS</a></li>
+                <li><a href="#products" class="active">PRODUCTS</a></li>
                 <li><a href="{{ route('cart') }}">CART</a></li>
                 <li><a href="/">CONTACT US</a></li>
                 <li>
@@ -69,10 +69,10 @@
                 <h2>TopUpKu</h2>
                 <div class="footer-menu-container">
                     <ul>
-                        <li><a href="home.html">HOME</a></li>
-                        <li><a href="ourProducts.html">PRODUCTS</a></li>
-                        <li><a href="testimoni.html">CART</a></li>
-                        <li><a href="aboutUs.html">CONTACT US</a></li>
+                        <li><a href="{{ url('home') }}#home">HOME</a></li>
+                        <li><a href="{{ url('home') }}#products">PRODUCTS</a></li>
+                        <li><a href="{{ route('cart') }}">CART</a></li>
+                        <li><a href="{{ route('contactus') }}">CONTACT US</a></li>
                     </ul>
                 </div>
                 <div class="social-icons">
