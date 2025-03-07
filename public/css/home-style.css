@@ -206,6 +206,69 @@ header:after {
     transition: background-color 0.3s ease;
 }
 
+/*PRODUCTS*/
+.product-container {
+    padding : 2rem;
+    width : 100%;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.product-container h1 { /* JUDUL Top-Up */
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color : #ff5e00;
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.search-box {
+    width: 80%;
+    padding: 10px;
+    font-size: 1em;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 5px;
+    background : rgba(0, 0, 0, 0.5);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+    justify-content: center;
+}
+
+.product {
+    background-color: transparent;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.product a {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+}
+
+.product img {
+    width: 100%;
+    background: transparent;
+    display: block;
+    margin: 0 auto;
+    border-radius: 10px;
+}
+
+.product p {
+    margin-top: 10px;
+    font-size: 10px;
+    background-color: transparent;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+
 /* FOOTER*/
 footer {
     background-color: #121212; 
@@ -253,7 +316,6 @@ footer {
     color: #ffcc00; 
 }
 
-/* Social Icons */
 .social-icons {
     margin-top: 10px;
 }

@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>TopUpKu</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-    <link rel="stylesheet" href="/css/stylo.css">
+    <link rel="stylesheet" href="/css/home-style.css">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
 </head>
@@ -19,7 +19,7 @@
             </div>
             <ul class="navigationBtn">
                 <li><a href="{{ url('/') }}" class="active">HOME</a></li>
-                <li><a href="{{ route('shop') }}">PRODUCTS</a></li>
+                <li><a href="{{ route('product') }}">PRODUCTS</a></li>
                 <li><a href="{{ route('cart') }}">CART</a></li>
                 <li><a href="/">CONTACT US</a></li>
                 <li>
@@ -52,6 +52,45 @@
             </div>
         </div>
     </header>
+
+    <div class="product-container">
+        <h1>Top-Up.</h1>
+        <input type="text" class="search-box" placeholder="Search product...">
+        <div class="product-grid">
+            <div class="product">
+                <a href="{{ route('genshin') }}"><img src="../Assets SoftEng/genshin_product.png" alt="Genshin Impact"></a>
+                <p>GENSHIN IMPACT (VIA UID)</p>
+            </div>
+            <div class="product">
+                <a href="{{ route('hsr') }}"><img src="../Assets SoftEng/hsr_product.png" alt="Honkai Star Rail"></a>
+                <p>HONKAI: STAR RAIL (VIA UID)</p>
+            </div>
+            <div class="product">
+                <a href="{{ route('mole') }}"><img src="../Assets SoftEng/mole_product.webp" alt="Mobile Legends"></a>
+                <p>MOBILE LEGENDS : BANG BANG (VIA UID)</p>
+            </div>
+            <div class="product">
+                <a href="{{ route('pubg') }}"><img src="../Assets SoftEng/pubgm_product.png" alt="Player Unknown's Battlegrounds"></a>
+                <p>Player Unknown's Battlegrounds (VIA UID)</p>
+            </div>
+            <div class="product">
+                <a href="{{ route('wuwa') }}"><img src="../Assets SoftEng/wuwa_product.png" alt="Wuthering Waves"></a>
+                <p>WUTHERING WAVES (FLASH SALE)</p>
+            </div>
+            <div class="product">
+                <a href="{{ route('valo') }}"><img src="../Assets SoftEng/valorant_product.png" alt="Valorant"></a>
+                <p>VALORANT</p>
+            </div>
+            <div class="product">
+                <a href="{{ route('steam') }}"><img src="../Assets SoftEng/steam_product.png" alt="Steam"></a>
+                <p>STEAM (IDR)</p>
+            </div>
+            <div class="product">
+                <a href="{{ route('epep') }}"><img src="../Assets SoftEng/epep_product.jpg" alt="Free Fire"></a>
+                <p>FREE FIRE (VIA UID)</p>
+            </div>
+        </div>
+    </div>
     
 
     <footer>
