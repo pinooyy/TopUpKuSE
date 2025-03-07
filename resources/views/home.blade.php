@@ -47,7 +47,7 @@
                 <p>game favoritmu. Dengan layanan cepat, aman, dan harga terbaik,</p>
                 <p>kami siap membantu meningkatkan pengalaman bermainmu!</p>
                 <div class="btn-container">
-                    <a href="/shop" class="btn-product">SHOP NOW</a>
+                    <a href="#products" class="btn-product">SHOP NOW</a>
                 </div>
             </div>
         </div>

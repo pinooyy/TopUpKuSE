@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthManager;
 
-Route::get('/', function () {
+Route::get('/home', function () {
     return view('home');
 })->name('home');
 
@@ -26,33 +26,33 @@ Route::get('/contactus', function () {
 })->name('contactus');
 
 Route::get('/genshin', function () {
-    return view('genshin');
+    return view('../product/genshin');
 })->name('genshin');
 
 Route::get('/hsr', function () {
-    return view('hsr');
+    return view('../product/hsr');
 })->name('hsr');
 
 Route::get('/mole', function () {
-    return view('mole');
+    return view('../product/mole');
 })->name('mole');
 
 Route::get('/pubg', function () {
-    return view('pubg');
+    return view('../product/pubg');
 })->name('pubg');
 
 Route::get('/wuwa', function () {
-    return view('wuwa');
+    return view('../product/wuwa');
 })->name('wuwa');
 
 Route::get('/valo', function () {
-    return view('valo');
+    return view('../product/valo');
 })->name('valo');
 
 Route::get('/steam', function () {
-    return view('steam');
+    return view('../product/steam');
 })->name('steam');
 
 Route::get('/epep', function () {
-    return view('epep');
+    return view('../product/epep');
 })->name('epep');
