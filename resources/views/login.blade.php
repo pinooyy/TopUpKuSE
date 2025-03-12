@@ -5,20 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TopUpKu | Login</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css/login-style.css">
 </head>
 <body>
     <nav class="wrapperNav">
         <div class="logo">
             <img src='Assets SoftEng/TOPUPKU_LOGO_WHITE.png' alt="TopUpKu_Logo_White">
         </div>
-        <ul class="navigationBtn">
-            <li>
-                <button class="user-btn">
-                    <i class="fas fa-user" alt="User Logo"></i>
-                </button>
-            </li>
-        </ul>
+<ul class="navigationBtn">
+    <li>
+        <a href="{{ route('home') }}" class="home-btn">HOME</a>
+    </li>
+    <li>
+        <button class="user-btn">
+            <i class="fas fa-user" alt="User Logo"></i>
+        </button>
+    </li>
+</ul>
+
     </nav>
     <div class="container" id = "signup">
         <h1 class="form-title">Log In</h1>

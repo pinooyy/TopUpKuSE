@@ -46,6 +46,19 @@ body {
     align-items: center;
 }
 
+.home-btn {
+  text-decoration: none;
+    color: white;
+    display: flex;
+    align-items: center;
+}
+
+.home-btn:hover {
+  color: orange;
+  text-decoration: underline;
+  transition: all 0.3s ease-in-out;
+}
+
 .user-btn {
   background-color: #ff5e00;
   border: none;
