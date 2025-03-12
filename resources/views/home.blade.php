@@ -23,7 +23,7 @@
                 <li><a href="{{ route('cart') }}">CART</a></li>
                 <li><a href="{{ route('contactus') }}">CONTACT US</a></li>
                 <li>
-                    <button class="user-btn">
+                    <button class="user-btn" onclick="window.location.href='{{ route('register') }}'">
                         <i class="fas fa-user" alt="User Logo"></i>
                     </button>
                 </li>
