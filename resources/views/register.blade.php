@@ -5,9 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-    <link rel="stylesheet" href="css/register.css">
+    <link rel="stylesheet" href="css/regis.css">
 </head>
 <body>
+    <nav class="wrapperNav">
+        <div class="logo">
+            <img src='Assets SoftEng/TOPUPKU_LOGO_WHITE.png' alt="TopUpKu_Logo_White">
+        </div>
+        <ul class="navigationBtn">
+            <li>
+                <button class="user-btn">
+                    <i class="fas fa-user" alt="User Logo"></i>
+                </button>
+            </li>
+        </ul>
+    </nav>
     <div class="container" id="signup">
         <h1 class="form-title">Register</h1>
         <form action="{{ route('register.post') }}" method="post">
@@ -51,6 +63,13 @@
             </div>
         </form>
     </div>
+    <nav class="footerNav">
+        <p>Support Us</p>
+        <div class="social-icons">
+            <a href="https://wa.me/" target="_blank"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
+        </div>
+    </nav>
     <script src="script.js"></script>
 </body>
 </html>
