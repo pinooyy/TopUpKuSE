@@ -20,7 +20,7 @@
             <ul class="navigationBtn">
                 <li><a href="#home">HOME</a></li>
                 <li><a href="#products">PRODUCTS</a></li>
-                <li><a href="{{ route('cart') }}">CART</a></li>
+                <li><a href="#testimoni">TESTIMONI</a></li>
                 <li><a href="{{ route('contactus') }}">CONTACT US</a></li>
                 <li>
                     <button class="user-btn" onclick="window.location.href='{{ route('register') }}'">
@@ -71,7 +71,7 @@
             </div>
             <div class="product">
                 <a href="{{ route('pubg') }}"><img src="../Assets SoftEng/pubgm_product.png" alt="Player Unknown's Battlegrounds"></a>
-                <p>Player Unknown's Battlegrounds</p>
+                <p>PLAYER UNKNOW'S BATTLEGROUNDS</p>
             </div>
             <div class="product">
                 <a href="{{ route('wuwa') }}"><img src="../Assets SoftEng/wuwa_product.png" alt="Wuthering Waves"></a>
@@ -89,7 +89,52 @@
                 <a href="{{ route('epep') }}"><img src="../Assets SoftEng/epep_product.jpg" alt="Free Fire"></a>
                 <p>FREE FIRE</p>
             </div>
+            <div class="product">
+                <a href="{{ route('superstargfriend') }}"><img src="../Assets SoftEng/superstargfriend_product.jpeg" alt="Superstar Gfriend"></a>
+                <p>SUPERSTAR GFRIEND</p>
+            </div>
+            <div class="product">
+                <a href="{{ route('cookierunkingdom') }}"><img src="../Assets SoftEng/cookierunkingdom_product.jpg" alt="Cookie Run Kingdom"></a>
+                <p>COOKIE RUN KINGDOM</p>
+            </div>
+            <div class="product">
+                <a href="{{ route('roblox') }}"><img src="../Assets SoftEng/roblox_product.jpeg" alt="Roblox"></a>
+                <p>ROBLOX</p>
+            </div>
+            <div class="product">
+                <a href="{{ route('playtogether') }}"><img src="../Assets SoftEng/playtogether_product.jpeg" alt="Play Together"></a>
+                <p>PLAY TOGETHER</p>
+            </div>
+            <div class="product">
+                <a href="{{ route('playtogether') }}"><img src="../Assets SoftEng/playtogether_product.jpeg" alt="Play Together"></a>
+                <p>PLAY TOGETHER</p>
+            </div>
+            <div class="product">
+                <a href="{{ route('playtogether') }}"><img src="../Assets SoftEng/playtogether_product.jpeg" alt="Play Together"></a>
+                <p>PLAY TOGETHER</p>
+            </div>
+            <div class="product">
+                <a href="{{ route('playtogether') }}"><img src="../Assets SoftEng/playtogether_product.jpeg" alt="Play Together"></a>
+                <p>PLAY TOGETHER</p>
+            </div>
+            <div class="product">
+                <a href="{{ route('playtogether') }}"><img src="../Assets SoftEng/playtogether_product.jpeg" alt="Play Together"></a>
+                <p>PLAY TOGETHER</p>
+            </div>
+            <div class="product">
+                <a href="{{ route('playtogether') }}"><img src="../Assets SoftEng/playtogether_product.jpeg" alt="Play Together"></a>
+                <p>PLAY TOGETHER</p>
+            </div>
+            <div class="product">
+                <a href="{{ route('playtogether') }}"><img src="../Assets SoftEng/playtogether_product.jpeg" alt="Play Together"></a>
+                <p>PLAY TOGETHER</p>
+            </div>
+            
         </div>
+    </div>
+
+    <div class="testimoni-container" id="testimoni">
+
     </div>
     
 
@@ -100,7 +145,7 @@
                     <ul>
                         <li><a href="{{ url('home') }}#home">HOME</a></li>
                         <li><a href="{{ url('home') }}#products">PRODUCTS</a></li>
-                        <li><a href="{{ route('cart') }}">CART</a></li>
+                        <li><a href="{{ url('home') }}#testimoni">TESTIMONI</a></li>
                         <li><a href="{{ route('contactus') }}">CONTACT US</a></li>
                     </ul>
                 </div>

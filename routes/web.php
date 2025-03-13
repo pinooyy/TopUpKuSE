@@ -56,3 +56,19 @@ Route::get('/steam', function () {
 Route::get('/epep', function () {
     return view('../product/epep');
 })->name('epep');
+
+Route::get('/superstargfriend', function () {
+    return view('../product/superstargfriend');
+})->name('superstargfriend');
+
+Route::get('/cookierunkingdom', function () {
+    return view('../product/cookierunkingdom');
+})->name('cookierunkingdom');
+
+Route::get('/roblox', function () {
+    return view('../product/roblox');
+})->name('roblox');
+
+Route::get('/playtogether', function () {
+    return view('../product/playtogether');
+})->name('playtogether');
