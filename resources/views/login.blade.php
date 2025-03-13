@@ -66,7 +66,7 @@
         <p>Support Us</p>
         <div class="social-icons">
             <a href="https://wa.me/" target="_blank"><i class="fab fa-whatsapp"></i></a>
-            <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.instagram.com/nicholasssmatthew/" target="_blank"><i class="fab fa-instagram"></i></a>
         </div>
     </nav>
     <script src="js/script.js"></script>
