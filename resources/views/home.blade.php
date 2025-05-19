@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>TopUpKu</title>
+    <link rel="icon" href="Assets SoftEng/TOPUPKU_LOGO_WHITE_WEBICON.PNG">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <link rel="stylesheet" href="/css/home-style.css">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
@@ -105,31 +106,6 @@
                 <a href="{{ route('playtogether') }}"><img src="../Assets SoftEng/playtogether_product.jpeg" alt="Play Together"></a>
                 <p>PLAY TOGETHER</p>
             </div>
-            <div class="product">
-                <a href="{{ route('playtogether') }}"><img src="../Assets SoftEng/playtogether_product.jpeg" alt="Play Together"></a>
-                <p>PLAY TOGETHER</p>
-            </div>
-            <div class="product">
-                <a href="{{ route('playtogether') }}"><img src="../Assets SoftEng/playtogether_product.jpeg" alt="Play Together"></a>
-                <p>PLAY TOGETHER</p>
-            </div>
-            <div class="product">
-                <a href="{{ route('playtogether') }}"><img src="../Assets SoftEng/playtogether_product.jpeg" alt="Play Together"></a>
-                <p>PLAY TOGETHER</p>
-            </div>
-            <div class="product">
-                <a href="{{ route('playtogether') }}"><img src="../Assets SoftEng/playtogether_product.jpeg" alt="Play Together"></a>
-                <p>PLAY TOGETHER</p>
-            </div>
-            <div class="product">
-                <a href="{{ route('playtogether') }}"><img src="../Assets SoftEng/playtogether_product.jpeg" alt="Play Together"></a>
-                <p>PLAY TOGETHER</p>
-            </div>
-            <div class="product">
-                <a href="{{ route('playtogether') }}"><img src="../Assets SoftEng/playtogether_product.jpeg" alt="Play Together"></a>
-                <p>PLAY TOGETHER</p>
-            </div>
-            
         </div>
     </div>
 
