@@ -6,18 +6,18 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    /**
-     * Run the migrations.
-     */
- Schema::create('products', function (Blueprint $table) {
-    $table->id();
-    $table->string('game_name');
-    $table->string('currency');
-    $table->decimal('price', 10, 2);
-    $table->integer('quantity');
-    $table->string('image_url')->nullable();
-    $table->timestamps();
-});
+    public function up(): void
+    {
+        Schema::create('products', function (Blueprint $table) {
+            $table->id();
+            $table->string('game_name');
+            $table->string('currency');
+            $table->decimal('price', 10, 2);
+            $table->integer('quantity');
+            $table->string('image_url')->nullable();
+            $table->timestamps();
+        });
+    }
 
     public function down(): void
     {

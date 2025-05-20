@@ -27,9 +27,6 @@ Route::get('/contactus', function () {
     return view('contactus');
 })->name('contactus');
 
-
-use App\Http\Controllers\ProductController;
-=======
 Route::get('/genshin', [ProductController::class, 'show'])->name('genshin')->defaults('game_name', 'genshin');
 
 
