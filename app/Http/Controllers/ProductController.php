@@ -7,12 +7,6 @@ use App\Models\Product;
 
 class ProductController extends Controller
 {
-    /**
-     * Display the specified product details by game name.
-     *
-     * @param  string  $game_name
-     * @return \Illuminate\View\View
-     */
     public function show($game_name)
     {
         // Fetch product by game_name
@@ -22,3 +16,7 @@ class ProductController extends Controller
         return view('product.product_detail', compact('product'));
     }
 }
+
+/* ini untuk merefer currency atau produk ingame yang bisa dibeli sesuai dengan spesifikasi masing" misal (genshin jual genesis, hsr jual oneric, dll). 
+dimana di refer sesuai game_name supaya bisa diambil dari database sesuai dengan game_name yang ada di dalam database
+*/

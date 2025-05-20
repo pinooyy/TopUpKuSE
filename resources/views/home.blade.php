@@ -71,7 +71,7 @@
             </div>
             <div class="product">
                 <a href="{{ route('pubg') }}"><img src="../Assets SoftEng/pubgm_product.png" alt="Player Unknown's Battlegrounds"></a>
-                <p>PLAYER UNKNOW'S BATTLEGROUNDS</p>
+                <p>PUBG MOBILE</p>
             </div>
             <div class="product">
                 <a href="{{ route('wuwa') }}"><img src="../Assets SoftEng/wuwa_product.png" alt="Wuthering Waves"></a>
