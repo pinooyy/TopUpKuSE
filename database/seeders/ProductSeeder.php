@@ -38,6 +38,10 @@ class ProductSeeder extends Seeder
                 'game_name' => 'genshin', 'currency' => 'Genesis Crystal', 'price' => 14865, 'quantity' => 60,
                 'image_url' => 'Assets SoftEng/genshin_banner.jpeg', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now(),
             ],
+            [
+                'game_name' => 'hsr', 'currency' => 'Genesis Crystal', 'price' => 14865, 'quantity' => 60,
+                'image_url' => 'Assets SoftEng/genshin_banner.jpeg', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now(),
+            ],
         ]);
     }
 }

@@ -13,7 +13,7 @@
         <nav class="wrapperNav">
             <div class="logo">
                 <img src='Assets SoftEng/TOPUPKU_LOGO_WHITE.png' alt="TopUpKu_Logo_White">
-            </div>
+            </div>  
             <ul class="navigationBtn">
                 <li><a href="{{ url('home') }}#home">HOME</a></li>
                 <li><a href="{{ url('home') }}#products">PRODUCTS</a></li>
