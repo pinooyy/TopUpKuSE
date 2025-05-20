@@ -8,12 +8,7 @@ use Illuminate\Support\Facades\DB;
 
 class ProductController extends Controller
 {
-    /**
-     * Display the specified product details by game name.
-     *
-     * @param  string  $game_name
-     * @return \Illuminate\View\View
-     */
+   
     public function show($game_name)
     {
         // Fetch all products by game_name
