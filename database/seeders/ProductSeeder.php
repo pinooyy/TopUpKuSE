@@ -8,15 +8,14 @@ use Carbon\Carbon;
 
 class ProductSeeder extends Seeder
 {
-    /** 
-     * Run the database seeds.
-     */
     public function run(): void
     {
         DB::table('products')->insert([
+
+            //genshin
             [
                 'game_name' => 'genshin', 'currency' => 'Genesis Crystal', 'price' => 1467568, 'quantity' => 8080,
-                'image_url' => 'Assets SoftEng/6480_Genshin-Impact_Crystals.png', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now(),
+                'image_url' => 'Assets SoftEng/genshin_banner.jpeg', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now(),
             ],
             [
                 'game_name' => 'genshin', 'currency' => 'Genesis Crystal', 'price' => 734234, 'quantity' => 3880,
@@ -38,6 +37,8 @@ class ProductSeeder extends Seeder
                 'game_name' => 'genshin', 'currency' => 'Genesis Crystal', 'price' => 14865, 'quantity' => 60,
                 'image_url' => 'Assets SoftEng/genshin_banner.jpeg', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now(),
             ],
+
+            //hsr
             [
                 'game_name' => 'hsr', 'currency' => 'Oneric Shard', 'price' => 1440541, 'quantity' => 8080,
                 'image_url' => 'Assets SoftEng/genshin_banner.jpeg', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now(),

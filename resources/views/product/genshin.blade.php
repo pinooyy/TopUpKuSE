@@ -17,7 +17,7 @@
             <ul class="navigationBtn">
                 <li><a href="{{ url('home') }}#home">HOME</a></li>
                 <li><a href="{{ url('home') }}#products">PRODUCTS</a></li>
-                <li><a href="{{ url('home') }}#testimoni">TESTIMONI</a></li>
+                <li><a href="{{ route('cart') }}">CART</a></li>
                 <li><a href="{{ route('contactus') }}">CONTACT US</a></li>
                 <li>
                     <button class="user-btn">
@@ -51,10 +51,9 @@
             </select>
             <h2>2. PILIH NOMINAL TOP UP</h2>
             <div class="topup-options">
-                <button>980 GC - Rp15.000</button>
-                <button>1980 GC - Rp30.000</button>
-                <button>3280 GC - Rp50.000</button>
-                <button>6480 GC - Rp100.000</button>
+                @foreach ($products as $product)
+                    <button>{{ $product->quantity }} {{ $product->currency }} - Rp. {{ number_format($product->price, 0, ',', '.') }}</button>
+                @endforeach
             </div>
             <h2>3. PILIH METODE PEMBAYARAN</h2>
             <div class="payment-methods">
@@ -77,7 +76,7 @@
                     <ul>
                         <li><a href="{{ url('home') }}#home">HOME</a></li>
                         <li><a href="{{ url('home') }}#products">PRODUCTS</a></li>
-                        <li><a href="{{ url('home') }}#testimoni">TESTIMONI</a></li>
+                        <li><a href="{{ route('cart') }}">CART</a></li>
                         <li><a href="{{ route('contactus') }}">CONTACT US</a></li>
                     </ul>
                 </div>

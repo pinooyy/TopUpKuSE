@@ -29,9 +29,10 @@ Route::get('/contactus', function () {
 
 Route::get('/genshin', [ProductController::class, 'show'])->name('genshin')->defaults('game_name', 'genshin');
 
-Route::get('/hsr', function () {
-    return view('../product/hsr');
-})->name('hsr');
+
+Route::get('/genshin', [ProductController::class, 'show'])->name('genshin')->defaults('game_name', 'genshin');
+
+Route::get('/hsr', [ProductController::class, 'show'])->name('hsr')->defaults('game_name', 'hsr');
 
 Route::get('/mole', function () {
     return view('../product/mole');

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TopUpKu | Genshin Impact</title>
+    <title>TopUpKu | Honkai: Star Rail</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <link rel="stylesheet" href="../css/product-detail.css">
 </head>
@@ -13,7 +13,7 @@
         <nav class="wrapperNav">
             <div class="logo">
                 <img src='Assets SoftEng/TOPUPKU_LOGO_WHITE.png' alt="TopUpKu_Logo_White">
-            </div>
+            </div>  
             <ul class="navigationBtn">
                 <li><a href="{{ url('home') }}#home">HOME</a></li>
                 <li><a href="{{ url('home') }}#products">PRODUCTS</a></li>
@@ -29,16 +29,16 @@
     </div>
 
     <section class="banner-container">
-        <img class="banner-blur" src="../Assets SoftEng/genshin_banner.jpeg" alt="Background Blur">
+        <img class="banner-blur" src="../Assets SoftEng/hsr_product.png" alt="Background Blur">
         <div class="banner">
-            <img src="../Assets SoftEng/genshin_banner.jpeg" alt="Banner Genshin Impact">
+            <img src="../Assets SoftEng/hsr_product.png" alt="Banner Honkai: Star Rail">
         </div>
     </section>
     
     <div class="container">
         <div class="product-info">
-            <h1>GENSHIN IMPACT (VIA UID)</h1>
-            <p>TopUpKu menyediakan topup Genshin Impact 100% legal via UID langsung untuk akun yang register via Android, iOS, PC, dan PS.</p>
+            <h1>HONKAI: STAR RAIL (VIA UID)</h1>
+            <p>TopUpKu menyediakan topup Honkai: Star Rail 100% legal via UID langsung untuk akun yang register via Android, iOS, PC, dan PS.</p>
         </div>
         <div class="topup-form">
             <h2>1. MASUKKAN USER ID</h2>
@@ -51,10 +51,9 @@
             </select>
             <h2>2. PILIH NOMINAL TOP UP</h2>
             <div class="topup-options">
-                <button>980 GC - Rp15.000</button>
-                <button>1980 GC - Rp30.000</button>
-                <button>3280 GC - Rp50.000</button>
-                <button>6480 GC - Rp100.000</button>
+                @foreach ($products as $product)
+                    <button>{{ $product->quantity }} {{ $product->currency }} - Rp. {{ number_format($product->price, 0, ',', '.') }}</button>
+                @endforeach
             </div>
             <h2>3. PILIH METODE PEMBAYARAN</h2>
             <div class="payment-methods">

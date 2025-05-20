@@ -14,24 +14,20 @@ class User extends Authenticatable
 
     protected $table = "users";
 
-    
+   
     protected $fillable = [
         'username',
         'email',
         'password',
     ];
 
-   
+    
     protected $hidden = [
         'password',
         'remember_token',
     ];
 
-    /**
-     * Get the attributes that should be cast.
-     *
-     * @return array<string, string>
-     */
+   
     protected function casts(): array
     {
         return [
