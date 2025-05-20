@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProductController;
+
 use App\Http\Controllers\AuthManager;
 
 Route::get('/home', function () {
@@ -25,7 +27,11 @@ Route::get('/contactus', function () {
     return view('contactus');
 })->name('contactus');
 
+
 use App\Http\Controllers\ProductController;
+=======
+Route::get('/genshin', [ProductController::class, 'show'])->name('genshin')->defaults('game_name', 'genshin');
+
 
 Route::get('/genshin', [ProductController::class, 'show'])->name('genshin')->defaults('game_name', 'genshin');
 
@@ -70,3 +76,5 @@ Route::get('/roblox', function () {
 Route::get('/playtogether', function () {
     return view('../product/playtogether');
 })->name('playtogether');
+
+Route::get('/product/{game_name}', [ProductController::class, 'show'])->name('product.show');
