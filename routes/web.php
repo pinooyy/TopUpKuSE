@@ -27,6 +27,8 @@ Route::get('/contactus', function () {
     return view('contactus');
 })->name('contactus');
 
+Route::view('/faq', 'faq')->name('faq');
+
 Route::get('/genshin', [ProductController::class, 'show'])->name('genshin')->defaults('game_name', 'genshin');
 
 
@@ -73,3 +75,5 @@ Route::get('/playtogether', function () {
 })->name('playtogether');
 
 Route::get('/product/{game_name}', [ProductController::class, 'show'])->name('product.show');
+
+
