@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TopUpKu | Wuthering Waves</title>
+    <link rel="icon" href="Assets SoftEng/TOPUPKU_LOGO_WHITE_WEBICON.PNG">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <link rel="stylesheet" href="../css/product-detail.css">
 </head>
@@ -17,7 +18,7 @@
             <ul class="navigationBtn">
                 <li><a href="{{ url('home') }}#home">HOME</a></li>
                 <li><a href="{{ url('home') }}#products">PRODUCTS</a></li>
-                <!-- Removed cart link as route 'cart' is not defined -->
+                <li><a href="{{ route('faq') }}">FAQ</a></li>
                 <li><a href="{{ route('contactus') }}">CONTACT US</a></li>
                 <li>
                     <button class="user-btn">
@@ -39,6 +40,15 @@
         <div class="product-info">
             <h1>WUTHERING WAVES (VIA UID)</h1>
             <p>TopUpKu menyediakan topup Wuthering Waves 100% legal via UID langsung untuk akun yang register via Android, iOS, PC, dan PS.</p>
+            @include('product.rating-box', [
+                'averageRating' => $averageRating,
+                'totalReviews' => $totalReviews,
+                'totalSales' => $totalSales,
+                'ratingDistribution' => $ratingDistribution,
+                'userReviews' => $userReviews,
+                'productImage' => $productImage,
+                'productName' => $productName,
+            ])
         </div>
         <div class="topup-form">
             <h2>1. MASUKKAN USER ID</h2>
@@ -62,10 +72,9 @@
                 <button>Transfer Bank</button>
                 <button>OVO</button>
                 <button>DANA</button>
-                <button>Metode Lainnya</button>
             </div>
             <div>
-                <button class="submit-btn">BELI!</button>
+                <button class="submit-btn" onclick="window.location.href='{{ route('checkout') }}'">BELI!</button>
             </div>
         </div>
     </div>
@@ -77,6 +86,7 @@
                     <ul>
                         <li><a href="{{ url('home') }}#home">HOME</a></li>
                         <li><a href="{{ url('home') }}#products">PRODUCTS</a></li>
+                        <li><a href="{{ route('faq') }}">FAQ</a></li>
                         <li><a href="{{ route('contactus') }}">CONTACT US</a></li>
                     </ul>
                 </div>
@@ -87,6 +97,23 @@
                 <p>copyright @2025 - TopUpKu | design by Kelompok 7</p>
         </div>
     </footer>
-
+    <script>
+        // JavaScript to handle independent active states for topup-options and payment-methods groups
+        document.addEventListener('DOMContentLoaded', function () {
+            function setupActiveState(groupSelector) {
+                const group = document.querySelector(groupSelector);
+                if (!group) return;
+                const buttons = group.querySelectorAll('button');
+                buttons.forEach(button => {
+                    button.addEventListener('click', () => {
+                        buttons.forEach(btn => btn.classList.remove('active'));
+                        button.classList.add('active');
+                    });
+                });
+            }
+            setupActiveState('.topup-options');
+            setupActiveState('.payment-methods');
+        });
+    </script>
 </body>
 </html>
