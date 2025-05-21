@@ -2,22 +2,15 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
-
 use App\Http\Controllers\AuthManager;
 
-Route::get('/', function () {
-    return view('home');
-})->name('home');
+Route::get('/', [ProductController::class, 'home'])->name('home');
 
 Route::get('/register', [AuthManager::class, 'register'])->name('register');
 Route::post('/register', [AuthManager::class, 'registerPost'])->name('register.post');
 Route::get('/login', [AuthManager::class, 'login'])->name('login');
 Route::post('/login', [AuthManager::class, 'loginPost'])->name('login.post');
 Route::get('/logout', [AuthManager::class, 'logout'])->name('logout');
-
-Route::get('/cart', function () {
-    return view('cart');
-})->name('cart');
 
 Route::get('/product', function () {
     return view('product');
@@ -59,6 +52,8 @@ Route::get('/epep', function () {
     return view('../product/epep');
 })->name('epep');
 
+
+Route::get('/superstar', [ProductController::class, 'show'])->name('superstar')->defaults('game_name', 'superstar');
 
 Route::get('/cookierunkingdom', function () {
     return view('../product/cookierunkingdom');

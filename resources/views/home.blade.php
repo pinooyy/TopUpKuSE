@@ -67,54 +67,14 @@
         <h1>"PRODUCTS"</h1>
         <input type="text" class="search-box" placeholder="Search product...">
         <div class="product-grid">
-            <div class="product">
-                <a href="{{ route('genshin') }}"><img src="../Assets SoftEng/genshin_product.png" alt="Genshin Impact"></a>
-                <p>GENSHIN IMPACT</p>
-            </div>
-            <div class="product">
-                <a href="{{ route('hsr') }}"><img src="../Assets SoftEng/hsr_product.png" alt="Honkai Star Rail"></a>
-                <p>HONKAI: STAR RAIL</p>
-            </div>
-            <div class="product">
-                <a href="{{ route('mole') }}"><img src="../Assets SoftEng/mole_product.webp" alt="Mobile Legends"></a>
-                <p>MOBILE LEGENDS : BANG BANG</p>
-            </div>
-            <div class="product">
-                <a href="{{ route('pubg') }}"><img src="../Assets SoftEng/pubgm_product.png" alt="Player Unknown's Battlegrounds"></a>
-                <p>PUBG MOBILE</p>
-            </div>
-            <div class="product">
-                <a href="{{ route('wuwa') }}"><img src="../Assets SoftEng/wuwa_product.png" alt="Wuthering Waves"></a>
-                <p>WUTHERING WAVES</p>
-            </div>
-            <div class="product">
-                <a href="{{ route('valo') }}"><img src="../Assets SoftEng/valorant_product.png" alt="Valorant"></a>
-                <p>VALORANT</p>
-            </div>
-            <div class="product">
-                <a href="{{ route('steam') }}"><img src="../Assets SoftEng/steam_product.png" alt="Steam"></a>
-                <p>STEAM</p>
-            </div>
-            <div class="product">
-                <a href="{{ route('epep') }}"><img src="../Assets SoftEng/epep_product.jpg" alt="Free Fire"></a>
-                <p>FREE FIRE</p>
-            </div>
-            <div class="product">
-                <a href="{{ route('superstargfriend') }}"><img src="../Assets SoftEng/superstargfriend_product.jpeg" alt="Superstar Gfriend"></a>
-                <p>SUPERSTAR GFRIEND</p>
-            </div>
-            <div class="product">
-                <a href="{{ route('cookierunkingdom') }}"><img src="../Assets SoftEng/cookierunkingdom_product.jpg" alt="Cookie Run Kingdom"></a>
-                <p>COOKIE RUN KINGDOM</p>
-            </div>
-            <div class="product">
-                <a href="{{ route('roblox') }}"><img src="../Assets SoftEng/roblox_product.jpeg" alt="Roblox"></a>
-                <p>ROBLOX</p>
-            </div>
-            <div class="product">
-                <a href="{{ route('playtogether') }}"><img src="../Assets SoftEng/playtogether_product.jpeg" alt="Play Together"></a>
-                <p>PLAY TOGETHER</p>
-            </div>
+            @foreach ($products as $product)
+                <div class="product" data-game-name="{{ strtolower($product->game_name) }}">
+                    <a href="{{ route(strtolower($product->game_name)) }}">
+                        <img src="{{ asset($product->image_url) }}" alt="{{ $product->game_name }}">
+                    </a>
+                    <p>{{ strtoupper($product->game_name) }}</p>
+                </div>
+            @endforeach
         </div>
     </div>
 
@@ -153,6 +113,26 @@
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
       AOS.init();
+    </script>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        const searchBox = document.querySelector('.search-box');
+        const products = document.querySelectorAll('.product-grid .product');
+
+        searchBox.addEventListener('input', function () {
+          const searchText = this.value.toLowerCase().trim();
+
+          products.forEach(product => {
+            const gameName = product.querySelector('p').textContent.toLowerCase();
+            if (gameName.includes(searchText)) {
+              product.style.display = '';
+            } else {
+              product.style.display = 'none';
+            }
+          });
+        });
+      });
     </script>
 
 </body>

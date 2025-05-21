@@ -8,6 +8,16 @@ use Illuminate\Support\Facades\DB;
 
 class ProductController extends Controller
 {
+    public function home(Request $request)
+    {
+        // Fetch all distinct game banners without filtering
+        $products = Product::select('game_name', DB::raw('MIN(image_url) as image_url'))
+            ->groupBy('game_name')
+            ->get();
+
+        return view('home', compact('products'));
+    }
+
     public function show($game_name)
     {
         $products = Product::where('game_name', $game_name)

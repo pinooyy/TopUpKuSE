@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TopUpKu | Honkai: Star Rail</title>
+    <title>TopUpKu | SuperStar G-Friend</title>
+    <link rel="icon" href="Assets SoftEng/TOPUPKU_LOGO_WHITE_WEBICON.PNG">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <link rel="stylesheet" href="../css/product-detail.css">
 </head>
@@ -13,9 +14,9 @@
         <nav class="wrapperNav">
             <div class="logo">
                 <img src='Assets SoftEng/TOPUPKU_LOGO_WHITE.png' alt="TopUpKu_Logo_White">
-            </div>  
+            </div>
             <ul class="navigationBtn">
-                <li><a href="{{ url('home') }}#home">HOME</a></li>
+                <li><a href="{{ url('/') }}#home">HOME</a></li>
                 <li><a href="{{ url('home') }}#products">PRODUCTS</a></li>
                 <!-- Removed cart link as route 'cart' is not defined -->
                 <li><a href="{{ route('contactus') }}">CONTACT US</a></li>
@@ -29,16 +30,16 @@
     </div>
 
     <section class="banner-container">
-        <img class="banner-blur" src="../Assets SoftEng/hsr_banner.jpg" alt="Background Blur">
+        <img class="banner-blur" src="../Assets SoftEng/superstargfriend_banner.webp" alt="Background Blur">
         <div class="banner">
-            <img src="../Assets SoftEng/hsr_banner.jpg" alt="Banner Honkai: Star Rail">
+            <img src="../Assets SoftEng/superstargfriend_banner.webp" alt="Banner Genshin Impact">
         </div>
     </section>
     
     <div class="container">
         <div class="product-info">
-            <h1>HONKAI: STAR RAIL (VIA UID)</h1>
-            <p>TopUpKu menyediakan topup Honkai: Star Rail 100% legal via UID langsung untuk akun yang register via Android, iOS, PC, dan PS.</p>
+            <h1>SUPERSTAR G-FRIEND (VIA UID)</h1>
+            <p>TopUpKu menyediakan topup Genshin Impact 100% legal via UID langsung untuk akun yang register via Android, iOS, PC, dan PS.</p>
         </div>
         <div class="topup-form">
             <h2>1. MASUKKAN USER ID</h2>
