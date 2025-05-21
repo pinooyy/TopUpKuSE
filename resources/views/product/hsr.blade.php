@@ -29,9 +29,9 @@
     </div>
 
     <section class="banner-container">
-        <img class="banner-blur" src="../Assets SoftEng/hsr_product.png" alt="Background Blur">
+        <img class="banner-blur" src="../Assets SoftEng/hsr_banner.jpg" alt="Background Blur">
         <div class="banner">
-            <img src="../Assets SoftEng/hsr_product.png" alt="Banner Honkai: Star Rail">
+            <img src="../Assets SoftEng/hsr_banner.jpg" alt="Banner Honkai: Star Rail">
         </div>
     </section>
     

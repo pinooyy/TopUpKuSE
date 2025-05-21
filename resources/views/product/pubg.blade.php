@@ -29,9 +29,9 @@
     </div>
 
     <section class="banner-container">
-        <img class="banner-blur" src="../Assets SoftEng/genshin_banner.jpeg" alt="Background Blur">
+        <img class="banner-blur" src="../Assets SoftEng/pubgm_banner.jpeg" alt="Background Blur">
         <div class="banner">
-            <img src="../Assets SoftEng/genshin_banner.jpeg" alt="Banner Genshin Impact">
+            <img src="../Assets SoftEng/pubgm_banner.jpeg" alt="Banner Genshin Impact">
         </div>
     </section>
     

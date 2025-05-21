@@ -65,7 +65,7 @@
                 <button>Metode Lainnya</button>
             </div>
             <div>
-                <button class="submit-btn">BELI!</button>
+                <button class="submit-btn" onclick="window.location.href='{{ route('checkout') }}'">BELI!</button>
             </div>
         </div>
     </div>

@@ -27,10 +27,11 @@ Route::get('/contactus', function () {
     return view('contactus');
 })->name('contactus');
 
+Route::get('/checkout', function () {
+    return view('checkout');
+})->name('checkout');
+
 Route::view('/faq', 'faq')->name('faq');
-
-Route::get('/genshin', [ProductController::class, 'show'])->name('genshin')->defaults('game_name', 'genshin');
-
 
 Route::get('/genshin', [ProductController::class, 'show'])->name('genshin')->defaults('game_name', 'genshin');
 
@@ -58,9 +59,6 @@ Route::get('/epep', function () {
     return view('../product/epep');
 })->name('epep');
 
-Route::get('/superstargfriend', function () {
-    return view('../product/superstargfriend');
-})->name('superstargfriend');
 
 Route::get('/cookierunkingdom', function () {
     return view('../product/cookierunkingdom');

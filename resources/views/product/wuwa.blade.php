@@ -29,9 +29,9 @@
     </div>
 
     <section class="banner-container">
-        <img class="banner-blur" src="../Assets SoftEng/wuwa_product.png" alt="Background Blur">
+        <img class="banner-blur" src="../Assets SoftEng/wuwa_banner.png" alt="Background Blur">
         <div class="banner">
-            <img src="../Assets SoftEng/wuwa_product.png" alt="Banner Wuthering Waves">
+            <img src="../Assets SoftEng/wuwa_banner.png" alt="Banner Wuthering Waves">
         </div>
     </section>
     
