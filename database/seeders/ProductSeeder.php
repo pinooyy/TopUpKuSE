@@ -63,6 +63,29 @@ class ProductSeeder extends Seeder
                 'game_name' => 'hsr', 'currency' => 'Oneric Shard', 'price' => 14414, 'quantity' => 60,
                 'image_url' => 'Assets SoftEng/genshin_banner.jpeg', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now(),
             ],
+
+            //wuwa
+            [
+                'game_name' => 'wuwa', 'currency' => 'Lunite', 'price' => 1467684, 'quantity' => 6480,
+                'image_url' => 'Assets SoftEng/genshin_banner.jpeg', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now(),
+            ],
+            [
+                'game_name' => 'wuwa', 'currency' => 'Lunite', 'price' => 768463, 'quantity' => 3280,
+                'image_url' => 'Assets SoftEng/genshin_banner.jpeg', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now(),
+            ],
+            [
+                'game_name' => 'wuwa', 'currency' => 'Lunite', 'price' => 461054, 'quantity' => 1980,
+                'image_url' => 'Assets SoftEng/genshin_banner.jpeg', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now(),
+            ],
+            [
+                'game_name' => 'wuwa', 'currency' => 'Lunite', 'price' => 230527, 'quantity' => 980,
+                'image_url' => 'Assets SoftEng/genshin_banner.jpeg', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now(),
+            ],
+            [
+                'game_name' => 'wuwa', 'currency' => 'Lunite', 'price' => 76843, 'quantity' => 300,
+                'image_url' => 'Assets SoftEng/genshin_banner.jpeg', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now(),
+            ],
+            
         ]);
     }
 }

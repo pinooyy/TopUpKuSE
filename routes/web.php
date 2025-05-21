@@ -5,7 +5,7 @@ use App\Http\Controllers\ProductController;
 
 use App\Http\Controllers\AuthManager;
 
-Route::get('/home', function () {
+Route::get('/', function () {
     return view('home');
 })->name('home');
 
@@ -42,9 +42,7 @@ Route::get('/pubg', function () {
     return view('../product/pubg');
 })->name('pubg');
 
-Route::get('/wuwa', function () {
-    return view('../product/wuwa');
-})->name('wuwa');
+Route::get('/wuwa', [ProductController::class, 'show'])->name('wuwa')->defaults('game_name', 'wuwa');
 
 Route::get('/valo', function () {
     return view('../product/valo');
