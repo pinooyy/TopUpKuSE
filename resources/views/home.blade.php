@@ -13,6 +13,15 @@
 
 </head>
 <body>
+
+    <a href="https://api.whatsapp.com/send?phone=081212345678" target="a">
+        <button class="button-floating">
+        <img src="Assets SoftEng/button-contactUs.png" alt="whatsapp">
+            <span>0812-1234-5678</span>
+        </button>
+    </a>
+
+
     <div class="navContainer">
         <nav class="wrapperNav">
             <div class="logo">
@@ -22,7 +31,7 @@
                 <li><a href="#home">HOME</a></li>
                 <li><a href="#products">PRODUCTS</a></li>
                 <li><a href="#testimoni">TESTIMONI</a></li>
-                <li><a href="{{ route('contactus') }}">CONTACT US</a></li>
+                <li><a href="#faq">FAQ</a></li>
                 <li>
                     <button class="user-btn" onclick="window.location.href='{{ route('register') }}'">
                         <i class="fas fa-user" alt="User Logo"></i>
@@ -109,10 +118,18 @@
         </div>
     </div>
 
-    <div class="testimoni-container" id="testimoni">
 
-    </div>
-    
+
+    <div class="testimoni-container" id="testimoni">
+        <h1>"TESTIMONI"</h1>
+        <div class="wrapper-testimoni">
+            <button id="prev">&lt;</button>
+            <div class="testimonial-container" id="testimonial-container"></div>
+            <button id="next">&gt;</button>
+        </div>
+        </div>
+
+    <script src="/js/swipeTesti.js"></script>
 
     <footer>
         <div class="footer-container">

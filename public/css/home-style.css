@@ -11,7 +11,56 @@ body {
     flex-direction: column;
     min-height: 100vh; 
     margin: 0;
-    overflow: auto; /* Pastikan scroll bisa digunakan */
+    overflow: auto; 
+}
+
+.button-floating {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    color: green;
+    border: 0;
+    border-radius: 100px;
+    width: 70px;
+    height: 70px;
+    z-index: 9999;
+    transition: .2s;
+
+    display: flex;             
+    align-items: center;         
+    justify-content: center;   
+    background-color: white;     
+    gap: 8px;
+}
+
+.button-floating img {
+    width: 30px;     
+    height: 30px;   
+    object-fit: contain;
+}
+
+.button-floating:hover {
+    width: auto;
+    padding: 0 20px;
+    cursor: pointer;
+}
+
+.button-floating span {
+    font-size: 16px;
+    margin-left: 5px;
+    transition: .2s;
+    line-height: 0px;
+    display: none;
+   text-align: center;
+}
+.button-floating:hover span {
+    display: inline-block;
+}
+
+.button-floating:hover image {
+    width: 30px;  
+    height: 30px;    
+    object-fit: contain;
 }
 
   .wrapperNav {
@@ -281,6 +330,87 @@ header:after {
     border-radius: 10px;
 }
 
+/*TESTIMONIAL*/
+.testimoni-container {
+    background-color: #0f121e;
+    width: 100vw;
+    height: 100vh;
+    padding-top: 70px
+}
+
+.testimoni-container h1 {
+    padding-top: 20px; 
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color : #ff5e00;
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    text-align: center;
+}
+.testimonial-container {
+  width: 100%;
+  height: 100%;
+  padding: 1em;
+  text-align: center;
+}
+
+.wrapper-testimoni {
+  background-color: #161c33;
+  width: 80vw;
+  max-width: 41em;
+  min-height: 25em;
+  border-radius: 0.6em;
+  margin: 2em auto; 
+  box-shadow: 0 1.8em 3em rgba(1, 17, 39, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1em;
+  gap: 1em;
+  position: relative; 
+  transform: none;   
+  left: auto;         
+  top: auto;          
+}
+
+.wrapper-testimoni button {
+  font-size: 1.8em;
+  height: 2.2em;
+  width: 2.2em;
+  background-color: #ffffff;
+  border: none;
+  color: #0a69ed;
+  box-shadow: 0 0 1em rgba(1, 17, 39, 0.25);
+  cursor: pointer;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.testimonial-container p {
+  color: #ffffff;
+  font-size: 15px;
+  line-height: 2em;
+  letter-spacing: 0.05em;
+}
+
+.testimonial-container img {
+  display: block;
+  margin: 1.8em auto 1.25em auto;
+  border-radius: 50%;
+  width: 4.4em;
+}
+
+.testimonial-container h3 {
+  color: #ffffff;
+  font-size: 20px;
+}
+
+.testimonial-container h6 {
+ padding-top: 0;
+  color: #bcc4da;
+  font-size: 0.9em;
+  letter-spacing: 0.03em;
+  font-weight: 400;
+}
 
 /* FOOTER*/
 footer {
