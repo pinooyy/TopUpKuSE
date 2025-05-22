@@ -10,16 +10,24 @@
 </head>
 
 <body>
+
+    <a href="https://api.whatsapp.com/send?phone=081212345678" target="a">
+        <button class="button-floating">
+        <img src="Assets SoftEng/button-contactUs.png" alt="whatsapp">
+            <span>0812-1234-5678</span>
+        </button>
+    </a>
+
     <div class="navContainer">
         <nav class="wrapperNav">
             <div class="logo">
                 <img src='Assets SoftEng/TOPUPKU_LOGO_WHITE.png' alt="TopUpKu_Logo_White">
             </div>
             <ul class="navigationBtn">
-                <li><a href="{{ url('home') }}#home">HOME</a></li>
-                <li><a href="{{ url('home') }}#products">PRODUCTS</a></li>
-                <li><a href="{{ route('faq') }}">FAQ</a></li>
-                <li><a href="{{ route('contactus') }}">CONTACT US</a></li>
+                        <li><a href="{{ route('home') }}#home">HOME</a></li>
+                        <li><a href="{{ route('home') }}#products">PRODUCTS</a></li>
+                        <li><a href="{{ route('home') }}#testimoni">TESTIMONI</a></li>
+                        <li><a href="{{ route('faq') }}">FAQ</a></li>
                 <li>
                     <button class="user-btn">
                         <i class="fas fa-user" alt="User Logo"></i>
@@ -83,10 +91,10 @@
                 <h2>TopUpKu</h2>
                 <div class="footer-menu-container">
                     <ul>
-                        <li><a href="{{ url('home') }}#home">HOME</a></li>
-                        <li><a href="{{ url('home') }}#products">PRODUCTS</a></li>
+                        <li><a href="{{ route('home') }}#home">HOME</a></li>
+                        <li><a href="{{ route('home') }}#products">PRODUCTS</a></li>
+                        <li><a href="{{ route('home') }}#testimoni">TESTIMONI</a></li>
                         <li><a href="{{ route('faq') }}">FAQ</a></li>
-                        <li><a href="{{ route('contactus') }}">CONTACT US</a></li>
                     </ul>
                 </div>
                 <div class="social-icons">

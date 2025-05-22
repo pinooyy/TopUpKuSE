@@ -5,6 +5,7 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\AuthManager;
 
 Route::get('/', [ProductController::class, 'home'])->name('home');
+Route::get('/home', [ProductController::class, 'home'])->name('home');
 
 Route::get('/register', [AuthManager::class, 'register'])->name('register');
 Route::post('/register', [AuthManager::class, 'registerPost'])->name('register.post');

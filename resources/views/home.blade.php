@@ -96,10 +96,10 @@
                 <h2>TopUpKu</h2>
                 <div class="footer-menu-container">
                     <ul>
-                        <li><a href="{{ url('home') }}#home">HOME</a></li>
-                        <li><a href="{{ url('home') }}#products">PRODUCTS</a></li>
-                        <li><a href="{{ url('home') }}#testimoni">TESTIMONI</a></li>
-                        <li><a href="{{ route('contactus') }}">CONTACT US</a></li>
+                        <li><a href="#home">HOME</a></li>
+                        <li><a href="#products">PRODUCTS</a></li>
+                        <li><a href="#testimoni">TESTIMONI</a></li>
+                        <li><a href="{{ route('faq') }}">FAQ</a></li>
                     </ul>
                 </div>
                 <div class="social-icons">
