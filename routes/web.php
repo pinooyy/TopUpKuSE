@@ -31,38 +31,23 @@ Route::get('/genshin', [ProductController::class, 'show'])->name('genshin')->def
 
 Route::get('/hsr', [ProductController::class, 'show'])->name('hsr')->defaults('game_name', 'hsr');
 
-Route::get('/mole', function () {
-    return view('../product/mole');
-})->name('mole');
+Route::get('/mole',[ProductController::class, 'show'])->name('mole')->defaults('game_name', 'mole');
 
-Route::get('/pubg', function () {
-    return view('../product/pubg');
-})->name('pubg');
+Route::get('/pubg',[ProductController::class, 'show'])->name('pubg')->defaults('game_name', 'pubg');
 
 Route::get('/wuwa', [ProductController::class, 'show'])->name('wuwa')->defaults('game_name', 'wuwa');
 
-Route::get('/valo', function () {
-    return view('../product/valo');
-})->name('valo');
+Route::get('/valo',[ProductController::class, 'show'])->name('valo')->defaults('game_name', 'valo');
 
-Route::get('/steam', function () {
-    return view('../product/steam');
-})->name('steam');
+Route::get('/steam',[ProductController::class, 'show'])->name('steam')->defaults('game_name', 'steam');
 
-Route::get('/epep', function () {
-    return view('../product/epep');
-})->name('epep');
-
+Route::get('/epep',[ProductController::class, 'show'])->name('epep')->defaults('game_name', 'epep');
 
 Route::get('/superstar', [ProductController::class, 'show'])->name('superstar')->defaults('game_name', 'superstar');
 
-Route::get('/cookierunkingdom', function () {
-    return view('../product/cookierunkingdom');
-})->name('cookierunkingdom');
+Route::get('/cookierunkingdom',[ProductController::class, 'show'])->name('cookierunkingdom')->defaults('game_name', 'cookierunkingdom');
 
-Route::get('/roblox', function () {
-    return view('../product/roblox');
-})->name('roblox');
+Route::get('/roblox',[ProductController::class, 'show'])->name('roblox')->defaults('game_name', 'roblox');
 
 Route::get('/playtogether',[ProductController::class, 'show'])->name('playtogether')->defaults('game_name', 'playtogether');
 
