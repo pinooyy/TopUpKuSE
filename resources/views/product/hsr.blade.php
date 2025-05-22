@@ -29,7 +29,7 @@
                         <li><a href="{{ route('home') }}#testimoni">TESTIMONI</a></li>
                         <li><a href="{{ route('faq') }}">FAQ</a></li>
                 <li>
-                    <button class="user-btn">
+                    <button class="user-btn" onclick="window.location.href='{{ route('register') }}'">
                         <i class="fas fa-user" alt="User Logo"></i>
                     </button>
                 </li>
