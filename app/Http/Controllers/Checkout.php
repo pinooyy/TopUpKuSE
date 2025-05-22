@@ -6,12 +6,6 @@ use Illuminate\Http\Request;
 
 class Checkout extends Controller
 {
-    /**
-     * Show the checkout page with order details.
-     *
-     * @param Request $request
-     * @return \Illuminate\View\View
-     */
     public function show(Request $request)
     {
         // Validate incoming request data

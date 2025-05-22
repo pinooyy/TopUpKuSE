@@ -11,7 +11,7 @@ class ProductController extends Controller
 {
     public function home(Request $request)
     {
-        // Fetch all distinct game banners without filtering
+        //untuk display di home
         $products = Product::select('game_name', DB::raw('MIN(image_url) as image_url'))
             ->groupBy('game_name')
             ->get();

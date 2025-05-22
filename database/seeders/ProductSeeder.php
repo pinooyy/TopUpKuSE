@@ -128,6 +128,182 @@ class ProductSeeder extends Seeder
                 'game_name' => 'playtogether', 'currency' => 'Diamonds', 'price' => 76843, 'quantity' => 300,
                 'image_url' => 'Assets SoftEng/playtogether_product.jpeg', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now(),
             ],
+
+            // mole 
+            [
+                'game_name' => 'mole', 'currency' => 'Diamonds', 'price' => 1467684, 'quantity' => 6480,
+                'image_url' => 'Assets SoftEng/mole_product.webp', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now(),
+            ],
+            [
+                'game_name' => 'mole', 'currency' => 'Diamonds', 'price' => 768463, 'quantity' => 3280,
+                'image_url' => 'Assets SoftEng/mole_product.webp', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now(),
+            ],
+            [
+                'game_name' => 'mole', 'currency' => 'Diamonds', 'price' => 461054, 'quantity' => 1980,
+                'image_url' => 'Assets SoftEng/mole_product.webp', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now(),
+            ],
+            [
+                'game_name' => 'mole', 'currency' => 'Diamonds', 'price' => 230527, 'quantity' => 980,
+                'image_url' => 'Assets SoftEng/mole_product.webp', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now(),
+            ],
+            [
+                'game_name' => 'mole', 'currency' => 'Diamonds', 'price' => 76843, 'quantity' => 300,
+                'image_url' => 'Assets SoftEng/mole_product.webp', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now(),
+            ],
+
+            // pubg 
+            [
+                'game_name' => 'pubg', 'currency' => 'Diamonds', 'price' => 1467684, 'quantity' => 6480,
+                'image_url' => 'Assets SoftEng/pubgm_product.png', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now(),
+            ],
+            [
+                'game_name' => 'pubg', 'currency' => 'Diamonds', 'price' => 768463, 'quantity' => 3280,
+                'image_url' => 'Assets SoftEng/pubgm_product.png', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now(),
+            ],
+            [
+                'game_name' => 'pubg', 'currency' => 'Diamonds', 'price' => 461054, 'quantity' => 1980,
+                'image_url' => 'Assets SoftEng/pubgm_product.png', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now(),
+            ],
+            [
+                'game_name' => 'pubg', 'currency' => 'Diamonds', 'price' => 230527, 'quantity' => 980,
+                'image_url' => 'Assets SoftEng/pubgm_product.png', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now(),
+            ],
+            [
+                'game_name' => 'pubg', 'currency' => 'Diamonds', 'price' => 76843, 'quantity' => 300,
+                'image_url' => 'Assets SoftEng/pubgm_product.png', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now(),
+            ],
+
+            // steam 
+            [
+                'game_name' => 'steam', 'currency' => 'Diamonds', 'price' => 1467684, 'quantity' => 6480,
+                'image_url' => 'Assets SoftEng/steam_product.png', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now(),
+            ],
+            [
+                'game_name' => 'steam', 'currency' => 'Diamonds', 'price' => 768463, 'quantity' => 3280,
+                'image_url' => 'Assets SoftEng/steam_product.png', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now(),
+            ],
+            [
+                'game_name' => 'steam', 'currency' => 'Diamonds', 'price' => 461054, 'quantity' => 1980,
+                'image_url' => 'Assets SoftEng/steam_product.png', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now(),
+            ],
+            [
+                'game_name' => 'steam', 'currency' => 'Diamonds', 'price' => 230527, 'quantity' => 980,
+                'image_url' => 'Assets SoftEng/steam_product.png', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now(),
+            ],
+            [
+                'game_name' => 'steam', 'currency' => 'Diamonds', 'price' => 76843, 'quantity' => 300,
+                'image_url' => 'Assets SoftEng/steam_product.png', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now(),
+            ],
+
+            // valo 
+            [
+                'game_name' => 'valo', 'currency' => 'Diamonds', 'price' => 1467684, 'quantity' => 6480,
+                'image_url' => 'Assets SoftEng/valorant_product.png', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now(),
+            ],
+            [
+                'game_name' => 'valo', 'currency' => 'Diamonds', 'price' => 768463, 'quantity' => 3280,
+                'image_url' => 'Assets SoftEng/valorant_product.png', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now(),
+            ],
+            [
+                'game_name' => 'valo', 'currency' => 'Diamonds', 'price' => 461054, 'quantity' => 1980,
+                'image_url' => 'Assets SoftEng/valorant_product.png', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now(),
+            ],
+            [
+                'game_name' => 'valo', 'currency' => 'Diamonds', 'price' => 230527, 'quantity' => 980,
+                'image_url' => 'Assets SoftEng/valorant_product.png', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now(),
+            ],
+            [
+                'game_name' => 'valo', 'currency' => 'Diamonds', 'price' => 76843, 'quantity' => 300,
+                'image_url' => 'Assets SoftEng/valorant_product.png', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now(),
+            ],
+
+            // roblox 
+            [
+                'game_name' => 'roblox', 'currency' => 'Diamonds', 'price' => 1467684, 'quantity' => 6480,
+                'image_url' => 'Assets SoftEng/roblox_product.jpeg', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now(),
+            ],
+            [
+                'game_name' => 'roblox', 'currency' => 'Diamonds', 'price' => 768463, 'quantity' => 3280,
+                'image_url' => 'Assets SoftEng/roblox_product.jpeg', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now(),
+            ],
+            [
+                'game_name' => 'roblox', 'currency' => 'Diamonds', 'price' => 461054, 'quantity' => 1980,
+                'image_url' => 'Assets SoftEng/roblox_product.jpeg', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now(),
+            ],
+            [
+                'game_name' => 'roblox', 'currency' => 'Diamonds', 'price' => 230527, 'quantity' => 980,
+                'image_url' => 'Assets SoftEng/roblox_product.jpeg', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now(),
+            ],
+            [
+                'game_name' => 'roblox', 'currency' => 'Diamonds', 'price' => 76843, 'quantity' => 300,
+                'image_url' => 'Assets SoftEng/roblox_product.jpeg', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now(),
+            ],
+
+            // pubg 
+            [
+                'game_name' => 'pubg', 'currency' => 'Diamonds', 'price' => 1467684, 'quantity' => 6480,
+                'image_url' => 'Assets SoftEng/playtogether_product.jpeg', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now(),
+            ],
+            [
+                'game_name' => 'pubg', 'currency' => 'Diamonds', 'price' => 768463, 'quantity' => 3280,
+                'image_url' => 'Assets SoftEng/playtogether_product.jpeg', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now(),
+            ],
+            [
+                'game_name' => 'pubg', 'currency' => 'Diamonds', 'price' => 461054, 'quantity' => 1980,
+                'image_url' => 'Assets SoftEng/playtogether_product.jpeg', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now(),
+            ],
+            [
+                'game_name' => 'pubg', 'currency' => 'Diamonds', 'price' => 230527, 'quantity' => 980,
+                'image_url' => 'Assets SoftEng/playtogether_product.jpeg', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now(),
+            ],
+            [
+                'game_name' => 'pubg', 'currency' => 'Diamonds', 'price' => 76843, 'quantity' => 300,
+                'image_url' => 'Assets SoftEng/playtogether_product.jpeg', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now(),
+            ],
+
+            // cookierunkingdom 
+            [
+                'game_name' => 'cookierunkingdom', 'currency' => 'Diamonds', 'price' => 1467684, 'quantity' => 6480,
+                'image_url' => 'Assets SoftEng/cookierunkingdom_product.jpg', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now(),
+            ],
+            [
+                'game_name' => 'cookierunkingdom', 'currency' => 'Diamonds', 'price' => 768463, 'quantity' => 3280,
+                'image_url' => 'Assets SoftEng/cookierunkingdom_product.jpg', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now(),
+            ],
+            [
+                'game_name' => 'cookierunkingdom', 'currency' => 'Diamonds', 'price' => 461054, 'quantity' => 1980,
+                'image_url' => 'Assets SoftEng/cookierunkingdom_product.jpg', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now(),
+            ],
+            [
+                'game_name' => 'cookierunkingdom', 'currency' => 'Diamonds', 'price' => 230527, 'quantity' => 980,
+                'image_url' => 'Assets SoftEng/cookierunkingdom_product.jpg', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now(),
+            ],
+            [
+                'game_name' => 'cookierunkingdom', 'currency' => 'Diamonds', 'price' => 76843, 'quantity' => 300,
+                'image_url' => 'Assets SoftEng/cookierunkingdom_product.jpg', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now(),
+            ],
+
+            // ff 
+            [
+                'game_name' => 'epep', 'currency' => 'Diamonds', 'price' => 1467684, 'quantity' => 6480,
+                'image_url' => 'Assets SoftEng/epep_product.jpg', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now(),
+            ],
+            [
+                'game_name' => 'epep', 'currency' => 'Diamonds', 'price' => 768463, 'quantity' => 3280,
+                'image_url' => 'Assets SoftEng/epep_product.jpg', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now(),
+            ],
+            [
+                'game_name' => 'epep', 'currency' => 'Diamonds', 'price' => 461054, 'quantity' => 1980,
+                'image_url' => 'Assets SoftEng/epep_product.jpg', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now(),
+            ],
+            [
+                'game_name' => 'epep', 'currency' => 'Diamonds', 'price' => 230527, 'quantity' => 980,
+                'image_url' => 'Assets SoftEng/epep_product.jpg', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now(),
+            ],
+            [
+                'game_name' => 'epep', 'currency' => 'Diamonds', 'price' => 76843, 'quantity' => 300,
+                'image_url' => 'Assets SoftEng/epep_product.jpg', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now(),
+            ],
         ]);
     }
 }
