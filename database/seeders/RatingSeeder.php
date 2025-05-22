@@ -115,6 +115,32 @@ class RatingSeeder extends Seeder
                     ],
                 ],
             ],
+            'playtogether' => [
+                'average_rating' => 4.9,
+                'total_reviews' => 41500,
+                'total_sales' => 52000,
+                'rating_distribution' => json_encode([
+                    5 => 41000,
+                    4 => 350,
+                    3 => 100,
+                    2 => 50,
+                    1 => 0,
+                ]),
+                'user_reviews' => [
+                    [
+                        'email' => 'user1@example.com',
+                        'rating' => 5,
+                        'comment' => 'Great service!',
+                        'tag' => '',
+                    ],
+                    [
+                        'email' => 'user2@example.com',
+                        'rating' => 4,
+                        'comment' => 'Fast and reliable.',
+                        'tag' => 'Top up Play Together',
+                    ],
+                ],
+            ],
         ];
 
         foreach ($dummyData as $gameName => $data) {

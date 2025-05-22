@@ -89,23 +89,44 @@ class ProductSeeder extends Seeder
             //superstar
             [
                 'game_name' => 'superstar', 'currency' => 'Diamonds', 'price' => 1467684, 'quantity' => 6480,
-                'image_url' => 'Assets SoftEng/superstargfriend_product.jpeg', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now(),
+                'image_url' => '../Assets SoftEng/superstargfriend_product.jpeg', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now(),
             ],
             [
                 'game_name' => 'superstar', 'currency' => 'Diamonds', 'price' => 768463, 'quantity' => 3280,
-                'image_url' => 'Assets SoftEng/superstargfriend_product.jpeg', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now(),
+                'image_url' => '../Assets SoftEng/superstargfriend_product.jpeg', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now(),
             ],
             [
                 'game_name' => 'superstar', 'currency' => 'Diamonds', 'price' => 461054, 'quantity' => 1980,
-                'image_url' => 'Assets SoftEng/superstargfriend_product.jpeg', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now(),
+                'image_url' => '../Assets SoftEng/superstargfriend_product.jpeg', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now(),
             ],
             [
                 'game_name' => 'superstar', 'currency' => 'Diamonds', 'price' => 230527, 'quantity' => 980,
-                'image_url' => 'Assets SoftEng/superstargfriend_product.jpeg', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now(),
+                'image_url' => '../Assets SoftEng/superstargfriend_product.jpeg', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now(),
             ],
             [
                 'game_name' => 'superstar', 'currency' => 'Diamonds', 'price' => 76843, 'quantity' => 300,
-                'image_url' => 'Assets SoftEng/superstargfriend_product.jpeg', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now(),
+                'image_url' => '../Assets SoftEng/superstargfriend_product.jpeg', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now(),
+            ],
+            //playtogether
+            [
+                'game_name' => 'playtogether', 'currency' => 'Diamonds', 'price' => 1467684, 'quantity' => 6480,
+                'image_url' => 'Assets SoftEng/playtogether_product.jpeg', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now(),
+            ],
+            [
+                'game_name' => 'playtogether', 'currency' => 'Diamonds', 'price' => 768463, 'quantity' => 3280,
+                'image_url' => 'Assets SoftEng/playtogether_product.jpeg', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now(),
+            ],
+            [
+                'game_name' => 'playtogether', 'currency' => 'Diamonds', 'price' => 461054, 'quantity' => 1980,
+                'image_url' => 'Assets SoftEng/playtogether_product.jpeg', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now(),
+            ],
+            [
+                'game_name' => 'playtogether', 'currency' => 'Diamonds', 'price' => 230527, 'quantity' => 980,
+                'image_url' => 'Assets SoftEng/playtogether_product.jpeg', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now(),
+            ],
+            [
+                'game_name' => 'playtogether', 'currency' => 'Diamonds', 'price' => 76843, 'quantity' => 300,
+                'image_url' => 'Assets SoftEng/playtogether_product.jpeg', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now(),
             ],
         ]);
     }

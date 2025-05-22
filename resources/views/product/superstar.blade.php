@@ -48,6 +48,7 @@
         <div class="product-info">
             <h1>SUPERSTAR G-FRIEND (VIA UID)</h1>
             <p>TopUpKu menyediakan topup Genshin Impact 100% legal via UID langsung untuk akun yang register via Android, iOS, PC, dan PS.</p>
+                {{ $productImage }}
             @include('product.rating-box', [
                 'averageRating' => $averageRating,
                 'totalReviews' => $totalReviews,

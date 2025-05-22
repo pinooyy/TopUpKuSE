@@ -64,9 +64,7 @@ Route::get('/roblox', function () {
     return view('../product/roblox');
 })->name('roblox');
 
-Route::get('/playtogether', function () {
-    return view('../product/playtogether');
-})->name('playtogether');
+Route::get('/playtogether',[ProductController::class, 'show'])->name('playtogether')->defaults('game_name', 'playtogether');
 
 Route::get('/product/{game_name}', [ProductController::class, 'show'])->name('product.show');
 

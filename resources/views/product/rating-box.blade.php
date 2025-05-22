@@ -1,6 +1,6 @@
 <div class="rating-box">
     <div class="rating-header">
-        <img src="{{ $productImage ?? '../Assets SoftEng/genshin_product.png' }}" alt="{{ $productName ?? 'Product' }}">
+        <img src="{{ $productImage ?? 'Assets SoftEng/lay.png' }}" alt="{{ $productName ?? 'Product' }}">
         <div class="rating-summary">
             <h2>TOP UP {{ strtoupper($productName ?? 'PRODUCT') }}</h2>
             <div style="display: flex; align-items: center; gap: 10px;">
@@ -29,7 +29,7 @@
             <div class="rating-bar">
                 <div class="rating-bar-label">{{ $star }}</div>
                 <div class="rating-bar-progress">
-                    <div class="rating-bar-fill" style="width: {{ $count / max($ratingDistribution) * 100 }}%;"></div>
+                    <div class="rating-bar-fill" style="width: {{ $maxRatingCount > 0 ? ($count / $maxRatingCount) * 100 : 0 }}%;"></div>
                 </div>
                 <div class="rating-bar-count">{{ number_format($count / 1000, 1) }} rb</div>
             </div>
