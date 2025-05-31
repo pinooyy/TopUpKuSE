@@ -324,11 +324,20 @@ header:after {
 
 .product p {
     margin-top: 10px;
-    font-size: 13px;
+    font-size: 16px;
     background-color: transparent;
     padding-top: 10px;
     border-radius: 10px;
 }
+
+.product-title {
+    font-size: 1.5rem;  /* Coba angka lebih besar jika masih kecil */
+    font-weight: bold;
+    text-align: center;
+    color: white;
+    margin-top: 10px;
+}
+
 .product:hover {
   transform: scale(1.05);
 }

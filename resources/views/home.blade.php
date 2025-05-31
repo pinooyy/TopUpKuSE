@@ -72,7 +72,8 @@
                     <a href="{{ route(strtolower($product->game_name)) }}">
                         <img src="{{ asset($product->image_url) }}" alt="{{ $product->game_name }}">
                     </a>
-                    <p>{{ strtoupper($product->game_name) }}</p>
+                    <p class="product-title">{{ $product->game_title }}</p>
+
                 </div>
             @endforeach
         </div>

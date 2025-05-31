@@ -10,6 +10,7 @@ class Product extends Model
     use HasFactory;
 
     protected $fillable = [
+        'game_title',
         'game_name',
         'currency',
         'price',

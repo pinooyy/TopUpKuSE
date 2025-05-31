@@ -12,9 +12,10 @@ class ProductController extends Controller
     public function home(Request $request)
     {
         //untuk display di home
-        $products = Product::select('game_name', DB::raw('MIN(image_url) as image_url'))
-            ->groupBy('game_name')
-            ->get();
+        $products = Product::select('game_name', 'game_title', 'image_url')
+        ->groupBy('game_name', 'game_title', 'image_url')
+        ->get();
+
 
         return view('home', compact('products'));
     }

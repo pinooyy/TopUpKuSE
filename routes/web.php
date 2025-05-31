@@ -27,29 +27,29 @@ Route::get('/checkout', function () {
 
 Route::view('/faq', 'faq')->name('faq');
 
-Route::get('/genshin', [ProductController::class, 'show'])->name('genshin')->defaults('game_name', 'genshin');
+Route::get('/Genshin-Impact', [ProductController::class, 'show'])->name('genshin')->defaults('game_name', 'genshin');
 
-Route::get('/hsr', [ProductController::class, 'show'])->name('hsr')->defaults('game_name', 'hsr');
+Route::get('/Honkai-Starrail', [ProductController::class, 'show'])->name('hsr')->defaults('game_name', 'hsr');
 
-Route::get('/mole',[ProductController::class, 'show'])->name('mole')->defaults('game_name', 'mole');
+Route::get('/MobileLegends',[ProductController::class, 'show'])->name('mole')->defaults('game_name', 'mole');
 
-Route::get('/pubg',[ProductController::class, 'show'])->name('pubg')->defaults('game_name', 'pubg');
+Route::get('/PUBG-Mobile',[ProductController::class, 'show'])->name('pubg')->defaults('game_name', 'pubg');
 
-Route::get('/wuwa', [ProductController::class, 'show'])->name('wuwa')->defaults('game_name', 'wuwa');
+Route::get('/Wuthering-Waves', [ProductController::class, 'show'])->name('wuwa')->defaults('game_name', 'wuwa');
 
-Route::get('/valo',[ProductController::class, 'show'])->name('valo')->defaults('game_name', 'valo');
+Route::get('/Valorant',[ProductController::class, 'show'])->name('valo')->defaults('game_name', 'valo');
 
-Route::get('/steam',[ProductController::class, 'show'])->name('steam')->defaults('game_name', 'steam');
+Route::get('/Steam',[ProductController::class, 'show'])->name('steam')->defaults('game_name', 'steam');
 
-Route::get('/epep',[ProductController::class, 'show'])->name('epep')->defaults('game_name', 'epep');
+Route::get('/FreeFire',[ProductController::class, 'show'])->name('epep')->defaults('game_name', 'epep');
 
-Route::get('/superstar', [ProductController::class, 'show'])->name('superstar')->defaults('game_name', 'superstar');
+Route::get('/SuperStar-GFriend', [ProductController::class, 'show'])->name('superstar')->defaults('game_name', 'superstar');
 
-Route::get('/cookierunkingdom',[ProductController::class, 'show'])->name('cookierunkingdom')->defaults('game_name', 'cookierunkingdom');
+Route::get('/Cookierun-Kingdom',[ProductController::class, 'show'])->name('cookierunkingdom')->defaults('game_name', 'cookierunkingdom');
 
-Route::get('/roblox',[ProductController::class, 'show'])->name('roblox')->defaults('game_name', 'roblox');
+Route::get('/Roblox',[ProductController::class, 'show'])->name('roblox')->defaults('game_name', 'roblox');
 
-Route::get('/playtogether',[ProductController::class, 'show'])->name('playtogether')->defaults('game_name', 'playtogether');
+Route::get('/Play-Together',[ProductController::class, 'show'])->name('playtogether')->defaults('game_name', 'playtogether');
 
 Route::get('/product/{game_name}', [ProductController::class, 'show'])->name('product.show');
 
