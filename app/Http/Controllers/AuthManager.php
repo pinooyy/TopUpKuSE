@@ -31,22 +31,24 @@ class AuthManager extends Controller
     }
     
     function registerPost(Request $request){
-        $request->validate([
-            'username' => 'required',
-            'email' => 'required|email|unique:users',
-            'password' => 'required',
-        ]);
+       $request->validate([
+        'username' => 'required|string|max:255|unique:users',
+        'email' => 'required|email|unique:users',
+        'password' => 'required|min:5|confirmed',
+    ]);
 
-        $data['username'] = $request->username;
-        $data['email'] = $request->email;
-        $data['password'] = Hash::make($request->password);
-        $user = User::create($data);
-        if(!$user){
-            return redirect(route('register'))->with("error", "Registration failed, try again!");
+        $user = User::create([
+        'username' => $request->username,
+        'email' => $request->email,
+        'password' => Hash::make($request->password),
+    ]);
+
+        if (!$user) {
+        return redirect(route('register'))->with("error", "Registration failed, try again!");
         }
-        
+
         return redirect(route('login'))->with("success", "Registration successful, login now!");
-    }
+}
 
     // function logout(){
     //     session::flush();
