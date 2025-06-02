@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
+use App\Models\Transaction;
+
 
 class Checkout extends Controller
 {
@@ -22,6 +25,8 @@ class Checkout extends Controller
             'order_date' => 'required|string',
         ]);
 
+        
+
         // Fetch fee from payment_methods table based on payment_method
         $feeRecord = DB::table('payment_methods')->where('name', $validated['payment_method'])->first();
         $fee = $feeRecord ? $feeRecord->fee : 0;
@@ -37,6 +42,17 @@ class Checkout extends Controller
 
         // Add invoice number to validated data
         $validated['invoice_number'] = $invoice_number;
+
+        Transaction::create([
+        'user_id' => Auth::id(),
+        'product' => $validated['product_name'],
+        'price' => $validated['service_price'],
+        'fee' => $fee,
+        'total_payment' => $validated['total_payment'],
+        'status' => $validated['status'],
+        'invoice_number' => $invoice_number,
+        'order_date' => $validated['order_date'],
+        ]);
 
         // Pass validated data to the checkout view
         return view('checkout', $validated);
