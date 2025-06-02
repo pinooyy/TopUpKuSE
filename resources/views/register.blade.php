@@ -18,9 +18,9 @@
                 <a href="{{ route('home') }}" class="home-btn">HOME</a>
             </li>
             <li>
-                <button class="user-btn">
-                    <i class="fas fa-user" alt="User Logo"></i>
-                </button>
+                    <button class="user-btn" onclick="window.location.href='{{ route('login') }}'">
+                        <i class="fas fa-user" alt="User Logo"></i>
+                    </button>
             </li>
         </ul>
     </nav>
@@ -42,6 +42,11 @@
                 <i class="fas fa-lock"></i>
                 <label for="password">Password</label>
                 <input type="password" name="password" id="password" placeholder="Password" required>
+            </div>
+            <div class="input-group">
+                <i class="fas fa-confirm"></i>
+                <label for="password">Password Confirmation</label>
+                <input type="password" name="password_confirmation" id="password" placeholder="Password Confirmations" required>
             </div>
             <input type="submit" class="btn" value="REGISTER" name="REGISTER">
             <div class="links">

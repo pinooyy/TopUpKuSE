@@ -12,6 +12,11 @@ class User extends Authenticatable
     /** @use HasFactory<\Database\Factories\UserFactory> */
     use HasFactory, Notifiable;
 
+      public function getAuthIdentifierName()
+    {
+        return 'username';
+    }
+
     protected $table = "users";
 
    
@@ -35,4 +40,11 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    public function transactions()
+    {
+    return $this->hasMany(Transaction::class);
+    }
+
+
 }

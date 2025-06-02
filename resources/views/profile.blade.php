@@ -32,7 +32,7 @@
         <div class="user-info">
         <img src="gfriend.webp" alt="Avatar" />
             <div>
-                <h2>Hwang Eunbi</h2>
+                <h2>{{ Auth::user()->username }}</h2>
                 <div class="tokens">0 Poin • 0 Coupon</div>
             </div>
         </div>
@@ -46,72 +46,22 @@
     </div>
 
     <!-- Activity Section -->
-    <div class="main">
-        <div class="section-title">Riwayat Aktivitas</div>
-            <div class="activity-grid">
-            <div class="history-card">
-                
-                <div class="card-left">
-                <img src="gfriend.webp" alt="MLBB Icon" class="card-image" />
-                <div class="card-title">Diamond Mobile Legends</div>
-                
-                </div>
-                <div class="card-info-right">
-                <div class="card-info">12 Mei 2025</div>
-                <div class="card-info">86 Diamonds</div>
-                <div class="card-info">Rp 20.000</div>
-                </div>
-            </div>
-        
-
-            
-        <div class="history-card">
-            <div class="card-left">
-            <img src="gfriend.webp" alt="MLBB Icon" class="card-image" />
-            <div class="card-title">Diamond Mobile Legends</div>
-            
-            </div>
-            <div class="card-info-right">
-            <div class="card-info">12 Mei 2025</div>
-            <div class="card-info">86 Diamonds</div>
-            <div class="card-info">Rp 20.000</div>
+    <div class="activity-history">
+    <h3>Riwayat Aktivitas</h3>
+    @forelse ($transactions as $trx)
+        <div class="activity-item" style="display: flex; align-items: center; margin-bottom: 10px; background: white; border-radius: 10px; padding: 10px;">
+            <img src="{{ asset($trx->product_image ?? 'default.png') }}" alt="product" style="width: 40px; height: 40px; margin-right: 15px;" />
+            <div style="flex-grow: 1;">
+                <strong>{{ $trx->product }}</strong><br>
+                {{ \Carbon\Carbon::parse($trx->order_date)->translatedFormat('d M Y') }}<br>
+                {{ $trx->quantity ?? 'x1' }} Diamonds<br>
+                Rp {{ number_format($trx->total_payment, 0, ',', '.') }}
             </div>
         </div>
-       
-
-           
-        <div class="history-card">
-            <div class="card-left">
-            <img src="gfriend.webp" alt="MLBB Icon" class="card-image" />
-            <div class="card-title">Diamond Mobile Legends</div>
-            
-            </div>
-            <div class="card-info-right">
-            <div class="card-info">12 Mei 2025</div>
-            <div class="card-info">86 Diamonds</div>
-            <div class="card-info">Rp 20.000</div>
-            </div>
-        </div>
-        
-
-           
-        <div class="history-card">
-            <div class="card-left">
-            <img src="gfriend.webp" alt="MLBB Icon" class="card-image" />
-            <div class="card-title">Diamond Mobile Legends</div>
-            
-            </div>
-            <div class="card-info-right">
-            <div class="card-info">12 Mei 2025</div>
-            <div class="card-info">86 Diamonds</div>
-            <div class="card-info">Rp 20.000</div>
-            </div>
-        </div>
-        </div>
-    <div class="button-section">
-      <button class="btn-logout">Logout</button>
-    </div>
-  </div>
+    @empty
+        <p>Tidak ada riwayat transaksi.</p>
+    @endforelse
+</div>
 
   <!-- Footer -->
     <footer>
