@@ -58,32 +58,63 @@
                     'productName' => $productName,
                 ])
             </div>
-        <div class="topup-form">
+        <form method="POST" action="{{ route('checkout.show') }}" class="topup-form">
+            @csrf
             <h2>1. MASUKKAN USER ID</h2>
-            <input type="text" placeholder="Masukkan UID Anda">
-            <select>
-                <option>Asia</option>
-                <option>Amerika</option>
-                <option>Europe</option>
-                <option>TW, HK, MO</option>
+            <input type="text" name="data" placeholder="Masukkan UID Anda" required>
+            <select name="region" required>
+                <option value="Asia">Asia</option>
+                <option value="Amerika">Amerika</option>
+                <option value="Europe">Europe</option>
+                <option value="TW, HK, MO">TW, HK, MO</option>
             </select>
             <h2>2. PILIH NOMINAL TOP UP</h2>
             <div class="topup-options">
                 @foreach ($products as $product)
-                    <button>{{ $product->quantity }} {{ $product->currency }} - Rp. {{ number_format($product->price, 0, ',', '.') }}</button>
+                    <label>
+                        <input type="radio" name="quantity" value="{{ $product->quantity }}" data-price="{{ $product->price }}" data-currency="{{ $product->currency }}" required>
+                        {{ $product->quantity }} {{ $product->currency }} - Rp. {{ number_format($product->price, 0, ',', '.') }}
+                    </label>
                 @endforeach
+                <input type="hidden" name="service_price" id="service_price" value="">
+                <input type="hidden" name="currency" id="currency" value="">
+                <input type="hidden" name="product_name" value="{{ $productName }}">
+                <input type="hidden" name="product_image" value="{{ $productImage }}">
+                <!-- fee is now fetched dynamically in controller, so no need to send from form -->
+                <input type="hidden" name="discount" value="0">
+                <input type="hidden" name="total_payment" id="total_payment" value="">
+                <input type="hidden" name="status" value="Pending">
+                <input type="hidden" name="order_date" value="{{ date('Y-m-d') }}">
             </div>
+            <script>
+                document.addEventListener('DOMContentLoaded', function () {
+                    const radios = document.querySelectorAll('input[name="quantity"]');
+                    const servicePriceInput = document.getElementById('service_price');
+                    const currencyInput = document.getElementById('currency');
+                    const totalPaymentInput = document.getElementById('total_payment');
+
+                    radios.forEach(radio => {
+                        radio.addEventListener('change', () => {
+                            servicePriceInput.value = radio.getAttribute('data-price');
+                            currencyInput.value = radio.getAttribute('data-currency');
+                            totalPaymentInput.value = radio.getAttribute('data-price');
+                        });
+                    });
+                });
+            </script>
             <h2>3. PILIH METODE PEMBAYARAN</h2>
             <div class="payment-methods">
-                <button>QRIS</button>
-                <button>Transfer Bank</button>
-                <button>OVO</button>
-                <button>DANA</button>
+                <label><input type="radio" name="payment_method" value="QRIS" required> QRIS</label>
+                <label><input type="radio" name="payment_method" value="Transfer Bank" required> Transfer Bank</label>
+                <label><input type="radio" name="payment_method" value="OVO" required> OVO</label>
+                <label><input type="radio" name="payment_method" value="DANA" required> DANA</label>
             </div>
+            <h2>4. MASUKKAN NOMOR WHATSAPP</h2>
+            <input type="text" name="whatsapp_number" placeholder="Masukkan Nomor WhatsApp Anda" required>
             <div>
-                <button class="submit-btn" onclick="window.location.href='{{ route('checkout') }}'">BELI!</button>
+                <button type="submit" class="submit-btn">BELI!</button>
             </div>
-        </div>
+        </form>
     </div>
 
     <footer>

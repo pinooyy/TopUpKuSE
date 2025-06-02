@@ -7,6 +7,10 @@ use App\Http\Controllers\AuthManager;
 Route::get('/', [ProductController::class, 'home'])->name('home');
 Route::get('/home', [ProductController::class, 'home'])->name('home');
 
+Route::get('/profile', function () {
+    return view('profile');
+})->name('profile');
+
 Route::get('/register', [AuthManager::class, 'register'])->name('register');
 Route::post('/register', [AuthManager::class, 'registerPost'])->name('register.post');
 Route::get('/login', [AuthManager::class, 'login'])->name('login');
@@ -21,9 +25,9 @@ Route::get('/contactus', function () {
     return view('contactus');
 })->name('contactus');
 
-Route::get('/checkout', function () {
-    return view('checkout');
-})->name('checkout');
+use App\Http\Controllers\Checkout;
+
+Route::post('/checkout', [Checkout::class, 'show'])->name('checkout.show');
 
 Route::view('/faq', 'faq')->name('faq');
 

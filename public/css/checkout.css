@@ -9,6 +9,55 @@ body{
     color: #ffffff;
 }
 
+.button-floating {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    color: green;
+    border: 0;
+    border-radius: 100px;
+    width: 70px;
+    height: 70px;
+    z-index: 9999;
+    transition: .2s;
+
+    display: flex;             
+    align-items: center;         
+    justify-content: center;   
+    background-color: white;     
+    gap: 8px;
+}
+
+.button-floating img {
+    width: 30px;     
+    height: 30px;   
+    object-fit: contain;
+}
+
+.button-floating:hover {
+    width: auto;
+    padding: 0 20px;
+    cursor: pointer;
+}
+
+.button-floating span {
+    font-size: 16px;
+    margin-left: 5px;
+    transition: .2s;
+    line-height: 0px;
+    display: none;
+   text-align: center;
+}
+.button-floating:hover span {
+    display: inline-block;
+}
+
+.button-floating:hover image {
+    width: 30px;  
+    height: 30px;    
+    object-fit: contain;
+}
+
 .wrapperNav {
     position: fixed;
     padding : 15px;

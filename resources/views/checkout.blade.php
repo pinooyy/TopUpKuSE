@@ -32,6 +32,14 @@
             </ul>
         </nav>
     </div>
+
+    <a href="https://api.whatsapp.com/send?phone=081212345678" target="a">
+        <button class="button-floating">
+        <img src="Assets SoftEng/button-contactUs.png" alt="whatsapp">
+            <span>0812-1234-5678</span>
+        </button>
+    </a>
+
     <div class="payment-section" role="region" aria-label="QRIS Payment Section">
         <p>Please pay the exact amount listed to process your order automatically</p>
         <img src="Assets SoftEng/qris_logo.webp" alt="QRIS Logo" class="qris-logo" />
@@ -78,23 +86,22 @@
             <div><span>Method of Payment</span><span>{{ $payment_method ?? 'N/A' }}</span></div>
         </div>
 
-        <div class="price-summary">
-            <div><span>Service Price</span><span>Rp. {{ number_format($service_price ?? 0, 0, ',', '.') }}</span></div>
-            <div><span>Fee</span><span>Rp. {{ number_format($fee ?? 0, 0, ',', '.') }}</span></div>
-            <div><span>Discount</span><span>Rp. {{ number_format($discount ?? 0, 0, ',', '.') }}</span></div>
-        </div>
+            <div class="price-summary">
+                <div><span>Service Price</span><span>Rp. {{ number_format($service_price ?? 0, 2, ',', '.') }}</span></div>
+                <div><span>Fee</span><span>Rp. {{ number_format($fee ?? 0, 2, ',', '.') }}</span></div>
+            </div>
 
-        <div class="total-payment" aria-label="Total Payment">
-            <span>Total Payment</span>
-            <span
-              >Rp. {{ number_format($total_payment ?? 0, 0, ',', '.') }}
-              <i
-                class="fa-regular fa-copy copy-icon"
-                title="Copy Total Payment"
-                onclick="copyToClipboard('Rp. {{ number_format($total_payment ?? 0, 0, ',', '.') }}')"
-              ></i>
-            </span>
-        </div>
+            <div class="total-payment" aria-label="Total Payment">
+                <span>Total Payment</span>
+                <span
+                  >Rp. {{ number_format($total_payment ?? 0, 2, ',', '.') }}
+                  <i
+                    class="fa-regular fa-copy copy-icon"
+                    title="Copy Total Payment"
+                    onclick="copyToClipboard('Rp. {{ number_format($total_payment ?? 0, 2, ',', '.') }}')"
+                  ></i>
+                </span>
+            </div>
 
         <div class="status">
             Status :

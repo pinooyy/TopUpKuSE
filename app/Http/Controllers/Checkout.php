@@ -3,12 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class Checkout extends Controller
 {
     public function show(Request $request)
     {
-        // Validate incoming request data
+        // Validate incoming request data except fee and total_payment
         $validated = $request->validate([
             'product_name' => 'required|string',
             'product_image' => 'required|string',
@@ -17,12 +18,19 @@ class Checkout extends Controller
             'whatsapp_number' => 'required|string',
             'payment_method' => 'required|string',
             'service_price' => 'required|numeric',
-            'fee' => 'required|numeric',
-            'discount' => 'required|numeric',
-            'total_payment' => 'required|numeric',
             'status' => 'required|string',
             'order_date' => 'required|string',
         ]);
+
+        // Fetch fee from payment_methods table based on payment_method
+        $feeRecord = DB::table('payment_methods')->where('name', $validated['payment_method'])->first();
+        $fee = $feeRecord ? $feeRecord->fee : 0;
+
+        // Add fee to validated data
+        $validated['fee'] = $fee;
+
+        // Calculate total payment
+        $validated['total_payment'] = $validated['service_price'] + $fee;
 
         // Generate invoice number with format INVxxxxxxx (7-digit random number)
         $invoice_number = 'INV' . mt_rand(1000000, 9999999);
