@@ -65,14 +65,13 @@ class ProductController extends Controller
         ];
     }
 
-    // ✅ Tambahkan ini
-    $nominals = DB::table('nominals')->where('game_name', $key)->get();
+
     $paymentMethods = DB::table('payment_methods')->get();
 
     $viewName = 'product.' . $key;
 
-    return view($viewName, array_merge(
-        compact('products', 'nominals', 'paymentMethods'),
+        return view($viewName, array_merge(
+        compact('products', 'paymentMethods'),
         $ratingData
     ));
 }

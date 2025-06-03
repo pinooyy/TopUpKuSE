@@ -36,7 +36,8 @@ Route::get('/contactus', function () {
     return view('contactus');
 })->name('contactus');
 
-Route::post('/checkout', [Checkout::class, 'show'])->name('checkout');
+Route::post('/checkout', [App\Http\Controllers\Checkout::class, 'show'])->name('checkout');
+
 
 Route::view('/faq', 'faq')->name('faq');
 

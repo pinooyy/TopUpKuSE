@@ -6,6 +6,7 @@ body {
     padding: 0;
 }
 
+
 /*FLOATING BUTTON*/
 .button-floating {
     position: fixed;
@@ -178,56 +179,41 @@ body {
     width: 50%;
 }
 
-.topup-form {
-    width: 40%;
-    background-color: #1a1a1a;
-    padding: 20px;
-    border-radius: 10px;
-}
-
-.topup-form input{
-    width: 97%;
-    padding: 10px;
-    margin: 10px 0;
-    border: none;
-    border-radius: 5px;
-}
-
-.topup-form select {
-    width: 100%;
-    padding: 10px;
-    margin: 10px 0;
-    border: none;
-    border-radius: 5px;
-}
-
-.topup-options, .payment-methods {
+.nominal-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
-    margin-bottom: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 1rem;
+    margin-top: 1.5rem;
 }
 
-.topup-form button {
-    width: 100%;
-    padding: 10px;
-    background-color: #213555;
-    border: none;
-    color: white;
-    font-size: 16px;
+.nominal-card {
+    background-color: #1e2a45;
+    border: 2px solid transparent;
+    border-radius: 12px;
+    padding: 1rem;
+    color: #fff;
+    text-align: center;
+    transition: 0.2s ease-in-out;
     cursor: pointer;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
 }
 
-.topup-form button:hover, .topup-form button:active {
-    background-color: #ff5e00;
+.nominal-card:hover,
+.nominal-card.selected {
+    border-color: #00bfff;
+    background-color: #263a5c;
 }
 
-.topup-form button:focus {
-    background-color: #ff5e00;
-    outline: none;
+.card-content .amount {
+    font-weight: bold;
+    font-size: 1.1rem;
 }
+
+.card-content .price {
+    font-size: 0.95rem;
+    margin-top: 0.5rem;
+    color: #ccc;
+}
+
 
 .submit-btn {
     width: 100%;

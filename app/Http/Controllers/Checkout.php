@@ -6,55 +6,60 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Transaction;
+use App\Models\Product;
 
 
 class Checkout extends Controller
 {
     public function show(Request $request)
     {
-        // Validate incoming request data except fee and total_payment
+        // Validasi data input
         $validated = $request->validate([
-            'product_name' => 'required|string',
-            'product_image' => 'required|string',
-            'quantity' => 'required|string',
+            'product_id' => 'required|exists:products,id',
             'data' => 'required|string',
             'whatsapp_number' => 'required|string',
             'payment_method' => 'required|string',
-            'service_price' => 'required|numeric',
-            'status' => 'required|string',
-            'order_date' => 'required|string',
         ]);
 
-        
+        // Ambil data produk berdasarkan ID
+        $product = Product::findOrFail($validated['product_id']);
 
-        // Fetch fee from payment_methods table based on payment_method
+        // Ambil fee berdasarkan metode pembayaran
         $feeRecord = DB::table('payment_methods')->where('name', $validated['payment_method'])->first();
         $fee = $feeRecord ? $feeRecord->fee : 0;
 
-        // Add fee to validated data
-        $validated['fee'] = $fee;
+        // Hitung total
+        $totalPayment = $product->price + $fee;
 
-        // Calculate total payment
-        $validated['total_payment'] = $validated['service_price'] + $fee;
-
-        // Generate invoice number with format INVxxxxxxx (7-digit random number)
+        // Buat nomor invoice
         $invoice_number = 'INV' . mt_rand(1000000, 9999999);
 
-        // Add invoice number to validated data
-        $validated['invoice_number'] = $invoice_number;
-
+        // Simpan transaksi ke database
         Transaction::create([
-        'user_id' => Auth::id(),
-        'product' => $validated['product_name'],
-        'price' => $validated['service_price'],
-        'fee' => $fee,
-        'total_payment' => $validated['total_payment'],
-        'status' => $validated['status'],
-        'invoice_number' => $invoice_number,
-        'order_date' => $validated['order_date'],
+            'user_id' => Auth::id(),
+            'product' => $product->quantity . ' ' . $product->currency,
+            'price' => $product->price,
+            'fee' => $fee,
+            'total_payment' => $totalPayment,
+            'status' => 'pending',
+            'invoice_number' => $invoice_number,
+            'order_date' => now(),
         ]);
 
-        // Pass validated data to the checkout view
-        return view('checkout', $validated);
+        // Kirim data ke halaman checkout
+        return view('checkout', [
+            'product_name' => $product->quantity . ' ' . $product->currency,
+            'product_image' => $product->image_url,
+            'quantity' => $product->quantity,
+            'data' => $validated['data'],
+            'whatsapp_number' => $validated['whatsapp_number'],
+            'payment_method' => $validated['payment_method'],
+            'service_price' => $product->price,
+            'fee' => $fee,
+            'total_payment' => $totalPayment,
+            'status' => 'pending',
+            'order_date' => now(),
+            'invoice_number' => $invoice_number,
+        ]);
     }
 }

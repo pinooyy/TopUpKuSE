@@ -7,24 +7,28 @@ use Illuminate\Support\Facades\Schema;
 return new class extends Migration
 {
     
-    public function up(): void
-    {
-        Schema::create('transactions', function (Blueprint $table) {
+public function up()
+{
+    Schema::create('transactions', function (Blueprint $table) {
         $table->id();
         $table->unsignedBigInteger('user_id');
+        $table->string('product');
+        $table->integer('price');
+        $table->integer('fee');
+        $table->integer('total_payment');
+        $table->string('status');
         $table->string('invoice_number')->unique();
-        $table->string('game');
-        $table->string('game_id');
+        $table->string('order_date');
+        
+        // Tambahan kolom:
+        $table->string('data');
         $table->string('whatsapp_number');
-        $table->string('payment_method');
-        $table->decimal('amount', 15, 2);
-        $table->decimal('fee', 15, 2)->default(0);
-        $table->enum('status', ['Pending', 'Success', 'Failed'])->default('Pending');
-        $table->timestamps();
+        $table->string('product_image');
 
-        $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+        $table->timestamps();
     });
-    }
+}
+
 
     /**
      * Reverse the migrations.

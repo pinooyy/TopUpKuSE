@@ -49,15 +49,13 @@
     <div class="activity-history">
     <h3>Riwayat Aktivitas</h3>
     @forelse ($transactions as $trx)
-        <div class="activity-item" style="display: flex; align-items: center; margin-bottom: 10px; background: white; border-radius: 10px; padding: 10px;">
-            <img src="{{ asset($trx->product_image ?? 'default.png') }}" alt="product" style="width: 40px; height: 40px; margin-right: 15px;" />
-            <div style="flex-grow: 1;">
-                <strong>{{ $trx->product }}</strong><br>
-                {{ \Carbon\Carbon::parse($trx->order_date)->translatedFormat('d M Y') }}<br>
-                {{ $trx->quantity ?? 'x1' }} Diamonds<br>
-                Rp {{ number_format($trx->total_payment, 0, ',', '.') }}
-            </div>
-        </div>
+    <div class="transaksi-box">
+        <p><strong>Invoice:</strong> {{ $trx->invoice_number }}</p>
+        <p><strong>Produk:</strong> {{ $trx->product }}</p>
+        <p><strong>Status:</strong> {{ $trx->status }}</p>
+        <p><strong>Total:</strong> Rp{{ number_format($trx->total_payment) }}</p>
+        <p><strong>Tanggal Order:</strong> {{ $trx->order_date }}</p>
+    </div>
     @empty
         <p>Tidak ada riwayat transaksi.</p>
     @endforelse
