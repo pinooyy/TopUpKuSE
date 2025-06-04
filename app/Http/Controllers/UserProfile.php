@@ -6,11 +6,12 @@ use App\Models\User;
 use App\Models\Transaction;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Models\ActivityHistory;
+
 
 
 class UserProfile extends Controller
 {
-   
     public function show()
     {
     if (!Auth::check()) {
@@ -32,28 +33,29 @@ class UserProfile extends Controller
     return redirect()->route('login')->with('success', 'Berhasil logout.');
     }
    
-    function ChangeUsn(){
+public function update(Request $request)
+{
+    /** @var \App\Models\User $user */
+    $user = Auth::user();
+
+    $request->validate([
+    'username' => 'required|string|unique:users,username,' . $user->username . ',username',
+    ]);
 
 
+    $user->username = $request->username;
+    $user->email = $request->email;
+
+    if ($request->filled('password')) {
+        $user->password = bcrypt($request->password);
     }
 
+    $user->save();
 
-    function ChangePw(){
-
-
-    }
-
-
-    function ChangeEmail(){
+    return redirect()->back()->with('success', 'Profile updated!');
+}
 
 
-    }
-
-
-    function Confirm(){
-
-
-    }
    
     //ini digunakan untuk alter information yang sudah ada di dalam database user
     //misal mau ganti email, pw atau usn si user

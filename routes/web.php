@@ -22,6 +22,8 @@ Route::get('/login', [AuthManager::class, 'login'])->name('login');
 
 Route::post('/logout', [UserProfile::class, 'logout'])->name('logout');
 
+Route::put('/profile/update', [UserProfile::class, 'update'])->name('profile.update');
+
 
 
 Route::get('/product', function () {
