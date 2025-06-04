@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\Models\ActivityHistory;
 
 class Checkout extends Controller
 {
@@ -37,6 +38,9 @@ class Checkout extends Controller
 
         // Add invoice number to validated data
         $validated['invoice_number'] = $invoice_number;
+
+        // Save data to ActivityHistory
+        ActivityHistory::create($validated);
 
         // Pass validated data to the checkout view
         return view('checkout', $validated);
