@@ -16,11 +16,11 @@ class InvoiceController extends Controller
             $activity->status = 'paid';
             $activity->save();
 
-            // Pass updated data to the invoice view
-            return view('invoice', $activity->toArray());
+            // Pass updated data to the invoice view as a named variable
+            return view('invoice', ['activity' => $activity]);
         } else {
-            // Invoice not found, return view with status 'Not Found'
-            return view('invoice', ['status' => 'Invoice Not Found']);
+            // Invoice not found, return view with status 'Invoice Not Found'
+            return view('invoice', ['activity' => null, 'status' => 'Invoice Not Found']);
         }
     }
 }

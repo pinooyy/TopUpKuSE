@@ -58,7 +58,7 @@ class Checkout extends Controller
             $activity->status = 'paid';
             $activity->save();
 
-            return redirect()->route('invoice')->with('status', 'paid');
+            return redirect()->route('invoice.show', ['invoice_number' => $validated['invoice_number']]);
         } else {
             return redirect()->route('checkout.show')->withErrors(['invoice_number' => 'Invalid invoice number']);
         }
