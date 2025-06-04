@@ -8,10 +8,23 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\TransactionController;
 use App\Http\Controllers\Checkout;
 
+Route::middleware(['web', 'auth'])->group(function () {
+    Route::get('/', [HomeController::class, 'index'])->name('home');
+    Route::get('/home', [HomeController::class, 'index'])->name('home');
+    Route::get('/profile', [UserProfile::class, 'show'])->name('profile');
+});
 
 
-// Route::get('/', [ProductController::class, 'home'])->name('home');
-// Route::get('/home', [ProductController::class, 'home'])->name('home');
+Route::get('/login', [AuthManager::class, 'login'])->name('login');
+    Route::post('/login', [AuthManager::class, 'loginPost'])->name('login.post');
+    Route::get('/register', [AuthManager::class, 'register'])->name('register');
+    Route::post('/register', [AuthManager::class, 'registerPost'])->name('register.post');
+
+Route::post('/logout', [UserProfile::class, 'logout'])->name('logout');
+
+Route::put('/profile/update', [UserProfile::class, 'update'])->name('profile.update');
+
+
 
 
 Route::middleware(['web', 'auth'])->group(function () {
@@ -36,7 +49,6 @@ Route::get('/contactus', function () {
     return view('contactus');
 })->name('contactus');
 
-Route::post('/checkout', [App\Http\Controllers\Checkout::class, 'show'])->name('checkout');
 
 
 Route::view('/faq', 'faq')->name('faq');
@@ -66,5 +78,15 @@ Route::get('/Roblox',[ProductController::class, 'show'])->name('roblox')->defaul
 Route::get('/Play-Together',[ProductController::class, 'show'])->name('playtogether')->defaults('game_name', 'playtogether');
 
 Route::get('/product/{game_name}', [ProductController::class, 'show'])->name('product.show');
+
+Route::post('/checkout/pay', [\App\Http\Controllers\Checkout::class, 'pay'])->name('checkout.pay');
+
+use App\Http\Controllers\InvoiceController;
+
+#Route::get('/invoice', function () {
+#    return view('invoice', ['status' => 'Paid']);
+#})->name('invoice');
+
+Route::get('/invoice/{invoice_number}', [InvoiceController::class, 'show'])->name('invoice.show');
 
 

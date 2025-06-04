@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -11,7 +12,12 @@
     <link rel="stylesheet" href="/css/profile.css">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+
+
 </head>
+
 
     <div class="navContainer">
             <nav class="wrapperNav">
@@ -26,6 +32,7 @@
                 </ul>
             </nav>
         </div>
+
 
     <!-- Header -->
     <div class="header">
@@ -45,20 +52,71 @@
         </div>
     </div>
 
-    <!-- Activity Section -->
-    <div class="activity-history">
-    <h3>Riwayat Aktivitas</h3>
-    @forelse ($transactions as $trx)
-    <div class="transaksi-box">
-        <p><strong>Invoice:</strong> {{ $trx->invoice_number }}</p>
-        <p><strong>Produk:</strong> {{ $trx->product }}</p>
-        <p><strong>Status:</strong> {{ $trx->status }}</p>
-        <p><strong>Total:</strong> Rp{{ number_format($trx->total_payment) }}</p>
-        <p><strong>Tanggal Order:</strong> {{ $trx->order_date }}</p>
+    <div class="user-settings-dark">
+  <div class="setting-row-dark">
+    <label>Username</label>
+    <div class="value-box-dark">
+      <span id="display-username">{{ Auth::user()->username }}</span>
+      <button onclick="openModal('username')"><i class="fas fa-lock"></i></button>
     </div>
-    @empty
-        <p>Tidak ada riwayat transaksi.</p>
-    @endforelse
+
+  <div class="setting-row-dark">
+    <label>Email</label>
+    <div class="value-box-dark">
+      <span id="display-email">{{ Auth::user()->email }}</span>
+      <button onclick="openModal('email')"><i class="fas fa-lock"></i></button>
+    </div>
+  </div>
+
+  <div class="setting-row-dark">
+    <label>Password</label>
+    <div class="value-box-dark">
+      <span id="display-password">********</span>
+      <button onclick="openModal('password')"><i class="fas fa-lock"></i></button>
+    </div>
+  </div>
+</div>
+
+    <!-- Activity Section -->
+    <div class="main">
+        <div class="section-title">Activity History</div>
+        <div class="activity-grid">
+            @forelse ($activityHistory as $activity)
+                <div class="history-card">
+                    <div class="card-left">
+                        <img src="{{ $activity->product_image ?? 'Assets SoftEng/default-product.png' }}" alt="{{ $activity->product_name ?? 'Product Image' }}" class="card-image" />
+                        <div class="card-title">{{ $activity->product_name ?? 'Unknown Product' }}</div>
+                    </div>
+                    <div class="card-info-right">
+                        <div class="card-info">{{ \Carbon\Carbon::parse($activity->order_date)->format('d M Y') }}</div>
+                        <div class="card-info">{{ $activity->quantity }}</div>
+                        <div class="card-info">Rp {{ number_format($activity->total_payment, 0, ',', '.') }}</div>
+                    </div>
+                </div>
+            @empty
+                <p>Tidak ada riwayat aktivitas.</p>
+            @endforelse
+        </div>
+
+<!-- Modal -->
+<div id="editModal" class="modal" style="display:none;">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <h3 id="modalTitle">Edit</h3>
+    <form method="POST" action="{{ route('profile.update') }}">
+      @csrf
+      @method('PUT')
+      <input type="text" name="username" value="{{ old('username', Auth::user()->username) }}">
+    <input type="email" name="email" value="{{ old('email', Auth::user()->email) }}">
+    <input type="password" name="password" placeholder="New password">
+      <div class="modal-buttons">
+        <button type="submit">Save</button>
+        <button type="button" onclick="closeModal()">Cancel</button>
+      </div>
+    </form>
+  </div>
+</div>
+
 
     <div class="button-section">
         <form method="POST" action="{{ route('logout') }}">
@@ -66,6 +124,9 @@
             @csrf
         </form>
     </div>
+
+
+
 
   <!-- Footer -->
     <footer>
@@ -86,8 +147,50 @@
                 <p>copyright @2025 - TopUpKu | design by Kelompok 7</p>
         </div>
     </footer>
+
+
+<script>
+  function openModal(field) {
+    const modal = document.getElementById("editModal");
+    const modalField = document.getElementById("modalField");
+    const modalValue = document.getElementById("modalValue");
+    const modalTitle = document.getElementById("modalTitle");
+
+    modal.style.display = "block";
+    modalField.value = field;
+
+    if (field === 'username') {
+      modalTitle.innerText = 'Edit Username';
+      modalValue.type = 'text';
+      modalValue.value = document.getElementById('display-username').innerText.trim();
+    } else if (field === 'email') {
+      modalTitle.innerText = 'Edit Email';
+      modalValue.type = 'email';
+      modalValue.value = document.getElementById('display-email').innerText.trim();
+    } else if (field === 'password') {
+      modalTitle.innerText = 'Change Password';
+      modalValue.type = 'password';
+      modalValue.value = '';
+    }
+  }
+
+  function closeModal() {
+    document.getElementById("editModal").style.display = "none";
+  }
+
+  // Optional: close when clicking outside modal
+  window.onclick = function(event) {
+    const modal = document.getElementById("editModal");
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  }
+</script>
+
+
 </body>
 </html>
+
 
 </body>
 </html>

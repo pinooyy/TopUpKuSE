@@ -10,7 +10,6 @@ class RedirectIfAuthenticated
 {
     public function handle(Request $request, Closure $next, ...$guards)
     {
-        return 'yeegagal';
         if (Auth::check()) {
             return redirect()->route('login');
         }

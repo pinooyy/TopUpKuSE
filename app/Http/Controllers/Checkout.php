@@ -4,10 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Auth;
-use App\Models\Transaction;
-use App\Models\Product;
-
+use App\Models\ActivityHistory;
 
 class Checkout extends Controller
 {
@@ -46,20 +43,28 @@ class Checkout extends Controller
             'order_date' => now(),
         ]);
 
-        // Kirim data ke halaman checkout
-        return view('checkout', [
-            'product_name' => $product->quantity . ' ' . $product->currency,
-            'product_image' => $product->image_url,
-            'quantity' => $product->quantity,
-            'data' => $validated['data'],
-            'whatsapp_number' => $validated['whatsapp_number'],
-            'payment_method' => $validated['payment_method'],
-            'service_price' => $product->price,
-            'fee' => $fee,
-            'total_payment' => $totalPayment,
-            'status' => 'pending',
-            'order_date' => now(),
-            'invoice_number' => $invoice_number,
+        // Save data to ActivityHistory
+        ActivityHistory::create($validated);
+
+        // Pass validated data to the checkout view
+        return view('checkout', $validated);
+    }
+
+    public function pay(Request $request)
+    {
+        $validated = $request->validate([
+            'invoice_number' => 'required|string',
         ]);
+
+        $activity = ActivityHistory::where('invoice_number', $validated['invoice_number'])->first();
+
+        if ($activity) {
+            $activity->status = 'paid';
+            $activity->save();
+
+            return redirect()->route('invoice.show', ['invoice_number' => $validated['invoice_number']]);
+        } else {
+            return redirect()->route('checkout.show')->withErrors(['invoice_number' => 'Invalid invoice number']);
+        }
     }
 }

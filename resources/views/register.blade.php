@@ -14,9 +14,6 @@
             <img src='Assets SoftEng/TOPUPKU_LOGO_WHITE.png' alt="TopUpKu_Logo_White">
         </div>
         <ul class="navigationBtn">
-            {{-- <li>
-                <a href="{{ route('home') }}" class="home-btn">HOME</a>
-            </li> --}}
             <li>
                     <button class="user-btn" onclick="window.location.href='{{ route('login') }}'">
                         <i class="fas fa-user" alt="User Logo"></i>
@@ -61,11 +58,11 @@
                     @endforeach
                 </div>
                 @endif
-        
+       
                 @if (session()->has('error'))
                     <div class="alert alert-danger">{{session('error')}}</div>
                 @endif
-        
+       
                 @if (session()->has('success'))
                     <div class="alert alert-success">{{session('success')}}</div>
                 @endif

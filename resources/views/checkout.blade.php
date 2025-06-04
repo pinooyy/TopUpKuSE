@@ -81,14 +81,14 @@
         </div>
 
         <div class="details-list">
-            <div><span>Data</span><span>{{ $data ?? 'N/A' }}</span></div>
+            <div><span>UID</span><span>{{ $data ?? 'N/A' }}</span></div>
             <div><span>WhatsApp Number</span><span>{{ $whatsapp_number ?? 'N/A' }}</span></div>
             <div><span>Method of Payment</span><span>{{ $payment_method ?? 'N/A' }}</span></div>
         </div>
 
             <div class="price-summary">
-                <div><span>Service Price</span><span>Rp. {{ number_format($service_price ?? 0, 2, ',', '.') }}</span></div>
-                <div><span>Fee</span><span>Rp. {{ number_format($fee ?? 0, 2, ',', '.') }}</span></div>
+                <div><span>Product Price</span><span>Rp. {{ number_format($service_price ?? 0, 2, ',', '.') }}</span></div>
+                <div><span>Service Fee</span><span>Rp. {{ number_format($fee ?? 0, 2, ',', '.') }}</span></div>
             </div>
 
             <div class="total-payment" aria-label="Total Payment">
@@ -108,6 +108,15 @@
             <span class="status-label">{{ $status ?? 'N/A' }}</span>
         </div>
     </div>
+
+    <div class="button-section">
+      <form method="POST" action="{{ route('checkout.pay') }}">
+        @csrf
+        <input type="hidden" name="invoice_number" value="{{ $invoice_number ?? '' }}">
+        <button type="submit" class="btn-bayar">BAYAR</button>
+      </form>
+    </div>
+
     <footer>
         <div class="footer-container">
                 <h2>TopUpKu</h2>

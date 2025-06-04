@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -11,8 +12,10 @@
     <link rel="stylesheet" href="/css/home-style.css">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
+
 </head>
 <body>
+
 
     <a href="https://api.whatsapp.com/send?phone=081212345678" target="a">
         <button class="button-floating">
@@ -46,14 +49,14 @@
                     </button>
                 </li>
                 @endauth
-                
+               
             </ul>
         </nav>
     </div>
     <header id="home">
         <video id="bg-video" poster="Assets SoftEng/home_thumbnail.png" autoplay loop muted>
             <source src="Assets SoftEng/home_background.mp4" type="video/mp4">
-            
+           
         </video>
         <div class="video-info" data-aos="fade-up">
             <div class="logo-video">
@@ -79,6 +82,7 @@
         </div>
     </header>
 
+
     <div class="product-container" id="products">
         <h1>"PRODUCTS"</h1>
         <input type="text" class="search-box" placeholder="Search product...">
@@ -90,10 +94,14 @@
                     </a>
                     <p class="product-title">{{ $product->game_title }}</p>
 
+
                 </div>
             @endforeach
         </div>
     </div>
+
+
+
 
 
 
@@ -106,7 +114,9 @@
         </div>
         </div>
 
+
     <script src="/js/swipeTesti.js"></script>
+
 
     <footer>
         <div class="footer-container">
@@ -127,18 +137,22 @@
         </div>
     </footer>
 
+
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
       AOS.init();
     </script>
+
 
     <script>
       document.addEventListener('DOMContentLoaded', function () {
         const searchBox = document.querySelector('.search-box');
         const products = document.querySelectorAll('.product-grid .product');
 
+
         searchBox.addEventListener('input', function () {
           const searchText = this.value.toLowerCase().trim();
+
 
           products.forEach(product => {
             const gameName = product.querySelector('p').textContent.toLowerCase();
@@ -151,6 +165,7 @@
         });
       });
     </script>
+
 
 </body>
 </html>
