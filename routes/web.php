@@ -3,19 +3,26 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\AuthManager;
+use App\Http\Controllers\UserProfile;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\TransactionController;
+use App\Http\Controllers\Checkout;
 
-Route::get('/', [ProductController::class, 'home'])->name('home');
-Route::get('/home', [ProductController::class, 'home'])->name('home');
+Route::middleware(['web', 'auth'])->group(function () {
+    Route::get('/', [HomeController::class, 'index'])->name('home');
+    Route::get('/home', [HomeController::class, 'index'])->name('home');
+    Route::get('/profile', [UserProfile::class, 'show'])->name('profile');
+});
 
-Route::get('/profile', function () {
-    return view('profile');
-})->name('profile');
 
-Route::get('/register', [AuthManager::class, 'register'])->name('register');
-Route::post('/register', [AuthManager::class, 'registerPost'])->name('register.post');
 Route::get('/login', [AuthManager::class, 'login'])->name('login');
-Route::post('/login', [AuthManager::class, 'loginPost'])->name('login.post');
-Route::get('/logout', [AuthManager::class, 'logout'])->name('logout');
+    Route::post('/login', [AuthManager::class, 'loginPost'])->name('login.post');
+    Route::get('/register', [AuthManager::class, 'register'])->name('register');
+    Route::post('/register', [AuthManager::class, 'registerPost'])->name('register.post');
+
+Route::post('/logout', [UserProfile::class, 'logout'])->name('logout');
+
+
 
 Route::get('/product', function () {
     return view('product');
@@ -25,7 +32,7 @@ Route::get('/contactus', function () {
     return view('contactus');
 })->name('contactus');
 
-use App\Http\Controllers\Checkout;
+
 
 Route::post('/checkout', [Checkout::class, 'show'])->name('checkout.show');
 

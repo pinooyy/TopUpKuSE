@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -11,7 +12,9 @@
     <link rel="stylesheet" href="/css/profile.css">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
+
 </head>
+
 
     <div class="navContainer">
             <nav class="wrapperNav">
@@ -27,12 +30,13 @@
             </nav>
         </div>
 
+
     <!-- Header -->
     <div class="header">
         <div class="user-info">
-        <img src="gfriend.webp" alt="Avatar" />
+        <img src="Assets SoftEng/user logo.png" alt="Avatar" />
             <div>
-                <h2>Hwang Eunbi</h2>
+                <h2>{{ Auth::user()->username }}</h2>
                 <div class="tokens">0 Poin • 0 Coupon</div>
             </div>
         </div>
@@ -45,73 +49,14 @@
         </div>
     </div>
 
-    <!-- Activity Section -->
-    <div class="main">
-        <div class="section-title">Riwayat Aktivitas</div>
-            <div class="activity-grid">
-            <div class="history-card">
-                
-                <div class="card-left">
-                <img src="gfriend.webp" alt="MLBB Icon" class="card-image" />
-                <div class="card-title">Diamond Mobile Legends</div>
-                
-                </div>
-                <div class="card-info-right">
-                <div class="card-info">12 Mei 2025</div>
-                <div class="card-info">86 Diamonds</div>
-                <div class="card-info">Rp 20.000</div>
-                </div>
-            </div>
-        
 
-            
-        <div class="history-card">
-            <div class="card-left">
-            <img src="gfriend.webp" alt="MLBB Icon" class="card-image" />
-            <div class="card-title">Diamond Mobile Legends</div>
-            
-            </div>
-            <div class="card-info-right">
-            <div class="card-info">12 Mei 2025</div>
-            <div class="card-info">86 Diamonds</div>
-            <div class="card-info">Rp 20.000</div>
-            </div>
-        </div>
-       
-
-           
-        <div class="history-card">
-            <div class="card-left">
-            <img src="gfriend.webp" alt="MLBB Icon" class="card-image" />
-            <div class="card-title">Diamond Mobile Legends</div>
-            
-            </div>
-            <div class="card-info-right">
-            <div class="card-info">12 Mei 2025</div>
-            <div class="card-info">86 Diamonds</div>
-            <div class="card-info">Rp 20.000</div>
-            </div>
-        </div>
-        
-
-           
-        <div class="history-card">
-            <div class="card-left">
-            <img src="gfriend.webp" alt="MLBB Icon" class="card-image" />
-            <div class="card-title">Diamond Mobile Legends</div>
-            
-            </div>
-            <div class="card-info-right">
-            <div class="card-info">12 Mei 2025</div>
-            <div class="card-info">86 Diamonds</div>
-            <div class="card-info">Rp 20.000</div>
-            </div>
-        </div>
-        </div>
     <div class="button-section">
-      <button class="btn-logout">Logout</button>
+        <form method="POST" action="{{ route('logout') }}">
+            <button class="btn-logout" href="{{ route('logout') }}">Logout</button>
+            @csrf
+        </form>
     </div>
-  </div>
+
 
   <!-- Footer -->
     <footer>
@@ -134,6 +79,7 @@
     </footer>
 </body>
 </html>
+
 
 </body>
 </html>

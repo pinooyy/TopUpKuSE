@@ -5,10 +5,11 @@ body {
     color: #ffffff;
     display: flex;
     flex-direction: column;
-    min-height: 100vh; 
+    min-height: 100vh;
     margin: 0;
-    overflow: auto; 
+    overflow: auto;
 }
+
 
 .wrapperNav {
     position: fixed;
@@ -26,11 +27,13 @@ body {
     z-index: 1000;
 }
 
+
 .logo img {
-    max-width: 150px; 
-    height: auto; 
+    max-width: 150px;
+    height: auto;
     padding-left: 50px;
 }
+
 
 .navigationBtn a {
     text-decoration: none;
@@ -40,14 +43,17 @@ body {
 }
 
 
+
+
 .navigationBtn {
     display: flex;
     justify-content: center;
     align-content: center;
     gap: 10px;
     padding-right: 50px;
-    
+   
 }
+
 
 .navigationBtn > li {
     list-style-type: none;
@@ -56,6 +62,7 @@ body {
     align-items: center;
 }
 
+
 .navigationBtn > li > a {
     text-decoration: none;
     color: white;
@@ -63,11 +70,13 @@ body {
     align-items: center;
 }
 
+
 .navigationBtn > li > a:hover {
     color: orange;
     text-decoration: underline;
     transition: all 0.3s ease-in-out;
 }
+
 
     .header {
     background: linear-gradient(135deg, #e06e11, #ebb770);
@@ -78,10 +87,12 @@ body {
     border-bottom-right-radius: 20px;
 }
 
+
 .user-info {
     display: flex;
     align-items: center;
 }
+
 
 .user-info img {
     width: 60px;
@@ -90,20 +101,24 @@ body {
     margin-right: 15px;
 }
 
+
 .user-info h2 {
     margin: 0;
     font-size: 20px;
 }
+
 
 .tokens {
     font-size: 14px;
     margin-top: 5px;
 }
 
+
 .level-section {
     margin-top: 15px;
     font-size: 14px;
 }
+
 
 .exp-bar {
     height: 8px;
@@ -113,22 +128,27 @@ body {
     overflow: hidden;
 }
 
+
 .exp-fill {
     width: 40%;
     height: 100%;
     background: yellow;
 }
 
+
 .main {
     padding: 20px 40px 20px 40px;
 }
+
 
 .section-title {
     font-size: 16px;
     font-weight: bold;
     margin-bottom: 10px;
 
+
 }
+
 
 .activity-grid {
    
@@ -142,10 +162,12 @@ body {
     border-radius: 12px;
 }
 
+
 .activity-grid::-webkit-scrollbar {
   width: 0px;
   background: transparent; /* optional */
 }
+
 
 .history-card {
   background-color: #ffffff;
@@ -158,6 +180,7 @@ body {
   border: 1px solid #e0e0e0;
 }
 
+
 .card-image {
   width: 100px;
   height: 100px;
@@ -166,6 +189,7 @@ body {
   margin-right: 16px;
 }
 
+
 .card-middle {
   flex: -1;
   display: flex;
@@ -173,10 +197,12 @@ body {
   margin-top: 4px;
 }
 
+
 .card-left {
   display: flex;
   align-items: flex-start;
 }
+
 
 .card-title {
     padding-top: 10px;
@@ -186,6 +212,7 @@ body {
   margin: 0;
 }
 
+
 .card-info-right {
   display: flex;
   flex-direction: column;
@@ -193,17 +220,20 @@ body {
   gap: 4px;
 }
 
+
 .card-info {
   font-size: 0.9rem;
   color: #666;
 }
 
+
 .button-section {
     margin-top: 30px;
-    display: flex;
+    display: center;
     justify-content: space-between;
     padding-bottom: 30px;
 }
+
 
 .button-section button {
     flex: 1;
@@ -215,28 +245,34 @@ body {
     cursor: pointer;
     transition: background 0.3s;
     color: white;
-    
+   
 }
+
+
 
 
 .btn-logout {
     background-color: #dc3545;
 }
 
+
 .btn-logout:hover {
     background-color: #a71d2a;
 }
 
 
+
+
 footer {
-    background-color: #121212; 
-    color: white; 
+    background-color: #121212;
+    color: white;
     text-align: center;
     padding: 20px 0;
     width: 100%;
     position: relative;
     bottom: 0;
 }
+
 
 .footer-container {
     max-width: 1200px;
@@ -246,22 +282,26 @@ footer {
     align-items: center;
 }
 
+
 .footer-container h2 {
     margin-bottom: 10px;
     font-size: 24px;
     font-weight: bold;
 }
 
+
 .footer-menu-container ul {
     list-style: none;
     padding: 0;
     display: flex;
-    gap: 20px; 
+    gap: 20px;
 }
+
 
 .footer-menu-container ul li {
     display: inline;
 }
+
 
 .footer-menu-container ul li a {
     text-decoration: none;
@@ -270,13 +310,16 @@ footer {
     transition: color 0.3s ease;
 }
 
+
 .footer-menu-container ul li a:hover {
-    color: #ffcc00; 
+    color: #ffcc00;
 }
+
 
 .social-icons {
     margin-top: 10px;
 }
+
 
 .social-icons a {
     color: white;
@@ -285,14 +328,13 @@ footer {
     transition: color 0.3s ease;
 }
 
+
 .social-icons a:hover {
     color: #ffcc00;
 }
+
 
 .footer-container p {
     margin-top: 10px;
     font-size: 14px;
 }
-
-
-
