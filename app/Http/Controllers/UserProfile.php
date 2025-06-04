@@ -14,16 +14,16 @@ class UserProfile extends Controller
 {
     public function show()
     {
-    if (!Auth::check()) {
-        return redirect()->route('login')->with('error', 'Silakan login dulu.');
-    }
+        if (!Auth::check()) {
+            return redirect()->route('login')->with('error', 'Silakan login dulu.');
+        }
 
+        $user = Auth::user();
 
-    $user = Auth::user();
-    // $transactions = Transaction::where('user_id', $user->id)->latest()->get();
+        // Fetch activity history for the user, latest first
+        $activityHistory = ActivityHistory::orderBy('created_at', 'desc')->get();
 
-
-    return view('profile', compact('user'));
+        return view('profile', compact('user', 'activityHistory'));
     }
     public function logout(Request $request)
     {

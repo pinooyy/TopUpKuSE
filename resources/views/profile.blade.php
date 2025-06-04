@@ -78,6 +78,26 @@
   </div>
 </div>
 
+    <!-- Activity Section -->
+    <div class="main">
+        <div class="section-title">Activity History</div>
+        <div class="activity-grid">
+            @forelse ($activityHistory as $activity)
+                <div class="history-card">
+                    <div class="card-left">
+                        <img src="{{ $activity->product_image ?? 'Assets SoftEng/default-product.png' }}" alt="{{ $activity->product_name ?? 'Product Image' }}" class="card-image" />
+                        <div class="card-title">{{ $activity->product_name ?? 'Unknown Product' }}</div>
+                    </div>
+                    <div class="card-info-right">
+                        <div class="card-info">{{ \Carbon\Carbon::parse($activity->order_date)->format('d M Y') }}</div>
+                        <div class="card-info">{{ $activity->quantity }}</div>
+                        <div class="card-info">Rp {{ number_format($activity->total_payment, 0, ',', '.') }}</div>
+                    </div>
+                </div>
+            @empty
+                <p>Tidak ada riwayat aktivitas.</p>
+            @endforelse
+        </div>
 
 <!-- Modal -->
 <div id="editModal" class="modal" style="display:none;">
