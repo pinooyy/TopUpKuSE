@@ -172,57 +172,158 @@ body {
 .container {
     display: flex;
     justify-content: space-between;
-    padding: 30px;
+    padding: 30px 50px 30px 50px;
 }
 
 .product-info {
     width: 50%;
 }
 
+
+/* CONTAINER UTAMA */
+.topup-container {
+    display: flex;
+    flex-direction: column;
+    gap: 32px; /* jarak antar section */
+    align-items: center;
+    margin-bottom: 48px;
+    padding-top: 135px;
+    padding: 135px 30px 0 20px;
+}
+
+/* NOMINAL GRID */
 .nominal-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-    gap: 1rem;
-    margin-top: 1.5rem;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 20px;
+    margin: 0 auto;
+    max-width: 900px;
+    background-color: #1e2a47;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    width: 100%;
 }
 
 .nominal-card {
-    background-color: #1e2a45;
+    background-color: #213555;
     border: 2px solid transparent;
     border-radius: 12px;
-    padding: 1rem;
+    padding: 16px;
     color: #fff;
     text-align: center;
-    transition: 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
     cursor: pointer;
+    min-height: 100px;
 }
 
 .nominal-card:hover,
 .nominal-card.selected {
     border-color: #00bfff;
     background-color: #263a5c;
+    transform: scale(1.03);
 }
 
 .card-content .amount {
     font-weight: bold;
-    font-size: 1.1rem;
+    font-size: 20px;
+    line-height: 1.4;
 }
 
 .card-content .price {
-    font-size: 0.95rem;
-    margin-top: 0.5rem;
+    font-size: 16px;
+    margin-top: 8px;
     color: #ccc;
 }
 
+/* PAYMENT SECTION */
+.payment-section {
+    max-width: 900px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #1e2a47;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
 
+.payment-section h4 {
+    font-size: 18px;
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
+}
+
+.payment-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: flex-start;
+}
+
+.payment-option {
+    flex: 1 1 auto;
+    min-width: 120px;
+    background-color: #263a5c;
+    padding: 10px 16px;
+    border-radius: 8px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease, border 0.3s ease;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid transparent;
+    
+}
+
+.payment-option:hover {
+    background-color: #e0e0e0;
+}
+
+.payment-option.selected {
+    background-color: #1e2a45;  /* warna gelap seperti tombol lainnya */
+    border-color: #00bfff;
+    color: white;
+}
+.payment-option input[type="radio"] {
+    display: none;
+}
+
+/* WHATSAPP INPUT */
+.wa-input {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.wa-input label {
+    font-size: 16px;
+    color: #ffffff;
+}
+
+.wa-field {
+    height: 30px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    background-color: #fff;
+    padding: 10px;
+    font-size: 16px;
+}
+
+/* SUBMIT BUTTON */
 .submit-btn {
     width: 100%;
-    background-color: #ff5e00; /* Warna berbeda dari topup-form button */
+    background-color: #ff5e00;
     font-size: 18px;
     color: white;
     border: none;
-    padding: 10px;
-    border-radius: 5px;
+    padding: 12px;
+    border-radius: 8px;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
@@ -230,6 +331,10 @@ body {
 .submit-btn:hover {
     background-color: #cc0000;
 }
+
+
+
+
 
 /* Active button style for topup-options and payment-methods */
 .topup-options button.active,
@@ -309,10 +414,11 @@ footer {
 /* Rating Box Styles */
 .rating-box {
     background-color: #1e2a47;
-    border-radius: 15px;
+    border-radius: 12px;
     padding: 20px;
     color: white;
     max-width: 600px;
+    height: 550px;
     font-family: Arial, sans-serif;
 }
 

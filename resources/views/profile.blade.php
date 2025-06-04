@@ -30,7 +30,7 @@
     <!-- Header -->
     <div class="header">
         <div class="user-info">
-        <img src="gfriend.webp" alt="Avatar" />
+        <img src="Assets SoftEng/user logo.png" alt="Avatar" />
             <div>
                 <h2>{{ Auth::user()->username }}</h2>
                 <div class="tokens">0 Poin • 0 Coupon</div>
@@ -59,7 +59,13 @@
     @empty
         <p>Tidak ada riwayat transaksi.</p>
     @endforelse
-</div>
+
+    <div class="button-section">
+        <form method="POST" action="{{ route('logout') }}">
+            <button class="btn-logout" href="{{ route('logout') }}">Logout</button>
+            @csrf
+        </form>
+    </div>
 
   <!-- Footer -->
     <footer>

@@ -14,9 +14,9 @@
             <img src='Assets SoftEng/TOPUPKU_LOGO_WHITE.png' alt="TopUpKu_Logo_White">
         </div>
         <ul class="navigationBtn">
-            <li>
+            {{-- <li>
                 <a href="{{ route('home') }}" class="home-btn">HOME</a>
-            </li>
+            </li> --}}
             <li>
                     <button class="user-btn" onclick="window.location.href='{{ route('login') }}'">
                         <i class="fas fa-user" alt="User Logo"></i>

@@ -8,15 +8,15 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <link rel="stylesheet" href="../css/product-detail.css">
 
-    <style>
-    .nominal-grid {
+<style>
+/* .nominal-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
     gap: 1rem;
     margin-top: 1.5rem;
-}
+} */
 
-.nominal-card {
+/* .nominal-card {
     background-color: #1e2a45;
     border: 2px solid transparent;
     border-radius: 12px;
@@ -25,24 +25,24 @@
     text-align: center;
     transition: 0.2s ease-in-out;
     cursor: pointer;
-}
+} */
 
-.nominal-card:hover,
+/* .nominal-card:hover,
 .nominal-card.selected {
     border-color: #00bfff;
     background-color: #263a5c;
-}
+} */
 
-.card-content .amount {
+/* .card-content .amount {
     font-weight: bold;
     font-size: 1.1rem;
-}
+} */
 
-.card-content .price {
+/* .card-content .price {
     font-size: 0.95rem;
     margin-top: 0.5rem;
     color: #ccc;
-}
+} */
 
     </style>
 
@@ -99,36 +99,59 @@
             </div>
 
     <!-- Input lain seperti data akun, nomor WA, dll -->
-<div class="nominal-grid">
-    @foreach ($products as $product)
-        <button type="button" class="nominal-card"
-                data-quantity="{{ $product->quantity }}"
-                data-price="{{ $product->price }}">
-            <div class="card-content">
-                <div class="amount">{{ $product->quantity }} {{ $product->currency }}</div>
-                <div class="price">Rp{{ number_format($product->price) }}</div>
-            </div>
-        </button>
-    @endforeach
+<!-- Nominal Grid -->
+<div class="topup-container">
+    <div class="nominal-grid">
+        @foreach ($products as $product)
+            <button type="button" class="nominal-card"
+                    data-quantity="{{ $product->quantity }}"
+                    data-price="{{ $product->price }}">
+                <div class="card-content">
+                    <div class="amount">{{ $product->quantity }} {{ $product->currency }}</div>
+                    <div class="price">Rp{{ number_format($product->price) }}</div>
+                </div>
+            </button>
+        @endforeach
+    </div>
+
+    <!-- Payment Section -->
+    <div class="payment-section">
+        <h4>Pilih Metode Pembayaran</h4>
+        <div class="payment-grid">
+            @foreach ($paymentMethods as $method)
+                <label class="payment-option">
+                    <input type="radio" name="payment_method" value="{{ $method->name }}" required>
+                    {{ $method->name }}
+                </label>
+            @endforeach
+        </div>
+
+        <!-- WhatsApp Number -->
+        <div class="wa-input">
+            <label for="wa">Nomor WhatsApp:</label>
+            <input type="text" id="wa" name="whatsapp_number" class="wa-field" required>
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit" class="submit-btn">BELI!</button>
+    </div>
 </div>
-
-<input type="hidden" name="quantity" id="selectedQuantity">
-<input type="hidden" name="service_price" id="selectedPrice">
-
-    {{-- Step 3: Payment Method --}}
-    <h4>Pilih Metode Pembayaran</h4>
-    @foreach ($paymentMethods as $method)
-        <label>
-            <input type="radio" name="payment_method" value="{{ $method->name }}" required>
-            {{ $method->name }}
-        </label><br>
-    @endforeach
+ 
 
     {{-- Step 4: WhatsApp --}}
-    <label>Nomor WhatsApp:</label>
+    {{-- <label>Nomor WhatsApp:</label>
     <input type="text" name="whatsapp_number" required>
+    <button type="submit">BELI!</button> --}}
+
+
+
+
+    
+    
 
     {{-- Hidden --}}
+    <input type="hidden" name="quantity" id="selectedQuantity">
+    <input type="hidden" name="service_price" id="selectedPrice">
     <input type="hidden" name="product_name" value="{{ $productName ?? $product->game_name }}">
     <input type="hidden" name="product_image" value="{{ $productImage ?? $product->image_url }}">
     <input type="hidden" name="service_price" id="selectedPrice" value="0"> {{-- Akan diisi lewat tombol --}}
@@ -136,7 +159,7 @@
     <input type="hidden" name="status" value="pending">
     <input type="hidden" name="order_date" value="{{ now() }}">
 
-    <button type="submit">BELI!</button>
+    
 </form>
     </div>
 
