@@ -15,7 +15,7 @@ public function index() {
         ->groupBy('game_name', 'game_title', 'image_url')
         ->get();
 
-
+        
         return view('home', compact('products'));
 }
 

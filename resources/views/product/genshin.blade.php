@@ -8,44 +8,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <link rel="stylesheet" href="../css/product-detail.css">
 
-<style>
-/* .nominal-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-    gap: 1rem;
-    margin-top: 1.5rem;
-} */
-
-/* .nominal-card {
-    background-color: #1e2a45;
-    border: 2px solid transparent;
-    border-radius: 12px;
-    padding: 1rem;
-    color: #fff;
-    text-align: center;
-    transition: 0.2s ease-in-out;
-    cursor: pointer;
-} */
-
-/* .nominal-card:hover,
-.nominal-card.selected {
-    border-color: #00bfff;
-    background-color: #263a5c;
-} */
-
-/* .card-content .amount {
-    font-weight: bold;
-    font-size: 1.1rem;
-} */
-
-/* .card-content .price {
-    font-size: 0.95rem;
-    margin-top: 0.5rem;
-    color: #ccc;
-} */
-
-    </style>
-
 </head>
 
 <body>
@@ -136,17 +98,6 @@
         <button type="submit" class="submit-btn">BELI!</button>
     </div>
 </div>
- 
-
-    {{-- Step 4: WhatsApp --}}
-    {{-- <label>Nomor WhatsApp:</label>
-    <input type="text" name="whatsapp_number" required>
-    <button type="submit">BELI!</button> --}}
-
-
-
-
-    
     
 
     {{-- Hidden --}}
