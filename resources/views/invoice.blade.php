@@ -10,7 +10,7 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
     />
-    <link rel="stylesheet" href="/css/checkout.css" />
+    <link rel="stylesheet" href="/css/invoice.css" />
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 </head>
 <body>
@@ -40,26 +40,9 @@
         </button>
     </a>
 
-    <div class="payment-section" role="region" aria-label="QRIS Payment Section">
-        <p>Please pay the exact amount listed to process your order automatically</p>
-        <img src="Assets SoftEng/qris_logo.webp" alt="QRIS Logo" class="qris-logo" />
-        <img src="Assets SoftEng/qr-code.png" alt="QR Code" class="qr-code" />
-        <div class="btn-container">
-            <button class="print-btn" onclick="window.print()">
-                <i class="fa fa-print"></i> Print Invoice
-            </button>
-            <button onclick="downloadQRCode()">
-                <i class="fa fa-download"></i> Download QR Code
-            </button>
-            <button onclick="location.reload()">
-                <i class="fa fa-sync-alt"></i> Refresh Pages
-            </button>
-        </div>
-    </div>
-
-    <div class="order-summary" role="region" aria-label="Order Summary">
-        <h2>Order Summary</h2>
-        <div class="invoice">
+    <div class="invoice" role="region" aria-label="Invoice">
+        <h2>Invoice</h2>
+        <div class="invoiceBox">
             Invoice Number : <strong>{{ $invoice_number ?? 'N/A' }}</strong>
             <i
               class="fa-regular fa-copy copy-icon"
@@ -110,7 +93,7 @@
     </div>
 
     <div class="button-section">
-      <a class="btn-bayar" href="{{ route('invoice') }}">BAYAR</a>
+      <a class="btn-continue" href="{{ route('home') }}">Continue Shopping</a>
     </div>
 
     <footer>

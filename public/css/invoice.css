@@ -133,70 +133,9 @@ body{
   background-color: #933300;
   transition: background-color 0.3s ease-in-out;
 }
-/* QRIS Payment Section Styles */
-.payment-section {
-  max-width: 400px;
-  background-color: #1e293b;
-  color: white;
-  padding: 20px;
-  border-radius: 10px;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  margin: 40px auto 20px auto;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-  text-align: center;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
 
-.payment-section .qris-logo {
-  width: 80px;
-  margin-bottom: 10px;
-}
-
-.payment-section .qr-code {
-  width: 200px;
-  height: 200px;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  border: 4px solid white;
-  border-radius: 10px;
-  object-fit: contain;
-  align-self: center;
-}
-
-      .payment-section .btn-container {
-        display: flex;
-        justify-content: space-between;
-        gap: 10px;
-      }
-      .payment-section button {
-        flex: 1;
-        background-color: #2563eb; /* blue */
-        border: none;
-        color: white;
-        padding: 8px 12px;
-        border-radius: 6px;
-        font-weight: 600;
-        cursor: pointer;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 6px;
-        transition: background-color 0.3s ease;
-      }
-      .payment-section button:hover {
-        background-color: #1d4ed8;
-      }
-      .payment-section button.print-btn {
-        background-color: #ec4899; /* pink */
-      }
-      .payment-section button.print-btn:hover {
-        background-color: #db2777;
-      }
       /* Order Summary Styles */
-      .order-summary {
+      .invoice {
         max-width: 400px;
         background-color: #1e293b; /* dark blue-gray */
         color: white;
@@ -206,82 +145,82 @@ body{
         margin: 20px auto 40px auto;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
       }
-      .order-summary h2 {
+      .invoice h2 {
         font-weight: 700;
         margin-bottom: 15px;
         font-size: 1.5rem;
       }
-      .order-summary .invoice,
-      .order-summary .order-date {
+      .invoice .invoiceBox,
+      .invoice .order-date {
         font-size: 0.9rem;
         margin-bottom: 10px;
       }
-      .order-summary .invoice strong {
+      .invoice .invoice strong {
         font-weight: 700;
       }
-      .order-summary .copy-icon {
+      .invoice .copy-icon {
         cursor: pointer;
         margin-left: 5px;
         color: #94a3b8;
       }
-      .order-summary .product-info {
+      .invoice .product-info {
         display: flex;
         align-items: center;
         margin: 15px 0;
       }
-      .order-summary .product-info img {
+      .invoice .product-info img {
         width: 60px;
         height: 60px;
         border-radius: 8px;
         margin-right: 15px;
         object-fit: cover;
       }
-      .order-summary .product-details {
+      .invoice .product-details {
         flex-grow: 1;
       }
-      .order-summary .product-details p {
+      .invoice .product-details p {
         margin: 0;
         font-weight: 600;
         font-size: 1rem;
       }
-      .order-summary .product-details .quantity {
+      .invoice .product-details .quantity {
         font-weight: 400;
         font-size: 0.9rem;
         color: #cbd5e1;
       }
-      .order-summary .details-list {
+      .invoice .details-list {
         margin: 15px 0;
         font-size: 0.9rem;
       }
-      .order-summary .details-list div {
+      .invoice .details-list div {
         display: flex;
         justify-content: space-between;
         margin-bottom: 6px;
       }
-      .order-summary .details-list div span:first-child {
+      .invoice .details-list div span:first-child {
         font-weight: 600;
       }
-      .order-summary .details-list div span:last-child {
+      .invoice .details-list div span:last-child {
         font-weight: 700;
       }
-      .order-summary .price-summary {
+      .invoice .price-summary {
         margin-top: 15px;
         border-top: 1px solid #334155;
         padding-top: 15px;
         font-size: 0.95rem;
       }
-      .order-summary .price-summary div {
+      .invoice .price-summary div {
         display: flex;
         justify-content: space-between;
         margin-bottom: 8px;
       }
-      .order-summary .price-summary div span:first-child {
+      .invoice .price-summary div span:first-child {
         font-weight: 600;
       }
-      .order-summary .price-summary div span:last-child {
+      .invoice .price-summary div span:last-child {
         font-weight: 700;
       }
-      .order-summary .total-payment {
+      .invoice .total-payment {
         margin-top: 20px;
         font-size: 1.3rem;
         font-weight: 900;
@@ -289,21 +228,21 @@ body{
         justify-content: space-between;
         align-items: center;
       }
-      .order-summary .total-payment .copy-icon {
+      .invoice .total-payment .copy-icon {
         margin-left: 8px;
         color: #94a3b8;
         cursor: pointer;
       }
-      .order-summary .status {
+      .invoice .status {
         margin-top: 20px;
         font-size: 1rem;
         font-weight: 600;
         display: flex;
         align-items: center;
       }
-      .order-summary .status-label {
+      .invoice .status-label {
         margin-left: 8px;
-        background-color: #f43f5e; /* pink/red */
+        background-color: green;
         color: white;
         padding: 4px 12px;
         border-radius: 20px;
@@ -334,11 +273,11 @@ body{
 }
 
 
-.btn-bayar {
+.btn-continue {
     background-color: #dc3545;
 }
 
-.btn-bayar:hover {
+.btn-continue:hover {
     background-color: #a71d2a;
 }
 
