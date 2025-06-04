@@ -64,6 +64,8 @@ Route::get('/Play-Together',[ProductController::class, 'show'])->name('playtoget
 
 Route::get('/product/{game_name}', [ProductController::class, 'show'])->name('product.show');
 
+Route::post('/checkout/pay', [\App\Http\Controllers\Checkout::class, 'pay'])->name('checkout.pay');
+
 Route::get('/invoice', function () {
     return view('invoice', ['status' => 'Paid']);
 })->name('invoice');

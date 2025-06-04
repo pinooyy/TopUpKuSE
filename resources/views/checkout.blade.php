@@ -110,7 +110,11 @@
     </div>
 
     <div class="button-section">
-      <a class="btn-bayar" href="{{ route('invoice') }}">BAYAR</a>
+      <form method="POST" action="{{ route('checkout.pay') }}">
+        @csrf
+        <input type="hidden" name="invoice_number" value="{{ $invoice_number ?? '' }}">
+        <button type="submit" class="btn-bayar">BAYAR</button>
+      </form>
     </div>
 
     <footer>

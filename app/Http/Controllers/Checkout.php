@@ -45,4 +45,22 @@ class Checkout extends Controller
         // Pass validated data to the checkout view
         return view('checkout', $validated);
     }
+
+    public function pay(Request $request)
+    {
+        $validated = $request->validate([
+            'invoice_number' => 'required|string',
+        ]);
+
+        $activity = ActivityHistory::where('invoice_number', $validated['invoice_number'])->first();
+
+        if ($activity) {
+            $activity->status = 'paid';
+            $activity->save();
+
+            return redirect()->route('invoice')->with('status', 'paid');
+        } else {
+            return redirect()->route('checkout.show')->withErrors(['invoice_number' => 'Invalid invoice number']);
+        }
+    }
 }
