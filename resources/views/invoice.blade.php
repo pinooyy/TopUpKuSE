@@ -24,7 +24,6 @@
                 <li><a href="{{ url('home') }}#home">HOME</a></li>
                 <li><a href="{{ url('home') }}#products">PRODUCTS</a></li>
                 <li><a href="{{ route('faq') }}">FAQ</a></li>
-                <li><a href="{{ route('contactus') }}">CONTACT US</a></li>
                 <li>
                     <button class="user-btn">
                         <i class="fas fa-user" alt="User Logo"></i>
