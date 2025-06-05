@@ -136,13 +136,13 @@ body{
 
       /* Order Summary Styles */
       .invoice {
-        max-width: 400px;
+        max-width: 40%;
         background-color: #1e293b; /* dark blue-gray */
         color: white;
         padding: 20px;
         border-radius: 10px;
         font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-        margin: 20px auto 40px auto;
+        margin: 100px auto 20px auto;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
       }
       .invoice h2 {
@@ -250,18 +250,54 @@ body{
         font-size: 0.9rem;
       }
 
-      .button-section {
+ .button-section {
     margin-top: 30px;
     display: flex;
-    justify-content: space-between;
-    padding-bottom: 30px;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding-bottom: 40px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.button-section a {
-    flex: 1;
-    text-align:center;
+.btn-download, .btn-continue {
     padding: 12px;
-    margin: 0 535px;
+    font-size: 15px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    color: white;
+}
+
+.btn-download {
+    flex: 4;
+    width: 300px;
+    background-color: #6c757d;
+}
+
+.btn-download:hover {
+    background-color: #545b62;
+}
+
+.btn-continue {
+    flex: 6;
+    background-color: #dc3545;
+}
+
+.btn-continue:hover {
+    background-color: #a71d2a;
+}
+
+
+/* Gaya umum tombol */
+.button-section button {
+    text-align: center;
+    padding: 12px;
     font-size: 15px;
     border: none;
     border-radius: 8px;
@@ -272,14 +308,14 @@ body{
     font-weight: bold;
 }
 
-
+/* Warna tombol Continue */
 .btn-continue {
     background-color: #dc3545;
 }
-
 .btn-continue:hover {
     background-color: #a71d2a;
 }
+
 
       /* FOOTER NGAB */
 footer {
