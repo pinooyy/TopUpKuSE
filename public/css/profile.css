@@ -137,7 +137,12 @@ body {
 
 
 .main {
-    padding: 20px 40px 20px 40px;
+    flex: 2;
+    min-width: 300px;
+    background-color: #2a2a3c;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
 }
 
 
@@ -248,39 +253,52 @@ body {
    
 }
 
-
-.user-settings-dark {
-  max-width: 400px;
-  margin: 40px auto;
-  background-color: #111;
-  padding: 20px;
-  border-radius: 12px;
-  color: #fff;
+.two-column-layout {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    padding: 20px;
 }
 
+/* 
+.user-settings-dark {
+    flex: 1;
+    min-width: 280px;
+    background-color: #1e1e2f;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+} */
+
+.user-settings-dark {
+    width: 320px; /* atau pakai max-width: 320px */
+    max-height: 250px; /* atur tinggi maksimum */
+    background-color: #1e1e2f;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+}
+
+
+
 .setting-row-dark {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 18px;
+    margin-bottom: 20px;
 }
 
 .setting-row-dark label {
-  font-weight: bold;
-  color: #fff;
-  width: 100px;
+    color: #fff;
+    display: block;
+    margin-bottom: 6px;
 }
 
 .value-box-dark {
-  background-color: #222;
-  color: #fff;
-  padding: 8px 14px;
-  border-radius: 8px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  width: 220px;
-  justify-content: space-between;
+    background-color: #333;
+    padding: 10px 15px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
 }
 
 .value-box-dark button {
@@ -334,11 +352,11 @@ body {
   margin: 15% auto;
   padding: 20px;
   border-radius: 12px;
-  width: 300px;
+  width: 400px;
   box-shadow: 0 0 10px #f39c12;
 }
 
-.modal-content input {
+/* .modal-content input {
   width: 100%;
   padding: 10px;
   margin-top: 10px;
@@ -346,6 +364,19 @@ body {
   border: none;
   border-radius: 6px;
   color: white;
+} */
+
+.modal-content input[type="text"],
+.modal-content input[type="email"],
+.modal-content input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin: 12px 0;
+    border-radius: 6px;
+    border: none;
+    background-color: #333;
+    color: white;
+    box-sizing: border-box;
 }
 
 .modal-buttons {
@@ -379,16 +410,16 @@ body {
     margin-top: 20px;
 }
 
-.btn-logout {
+ .btn-logout {
     background-color: #e63946;
     color: white;
     border: none;
-    padding: 10px 20px;
+    padding: 10px 50px;
     border-radius: 8px;
     cursor: pointer;
     font-weight: bold;
     transition: background-color 0.3s;
-}
+} 
 
 .btn-logout:hover {
     background-color: #d62828;

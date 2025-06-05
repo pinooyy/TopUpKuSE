@@ -58,6 +58,7 @@
                     'productName' => $productName,
                 ])
             </div>
+    
         <form method="POST" action="{{ route('checkout.show') }}" class="topup-form">
             @csrf
             <h2>1. MASUKKAN USER ID</h2>
@@ -71,6 +72,7 @@
             <h2>2. PILIH NOMINAL TOP UP</h2>
             <div class="topup-options">
                 @foreach ($products as $product)
+                
                     <label>
                         <input type="radio" name="quantity" value="{{ $product->quantity }}" data-price="{{ $product->price }}" data-currency="{{ $product->currency }}" required>
                         {{ $product->quantity }} {{ $product->currency }} - Rp. {{ number_format($product->price, 0, ',', '.') }}
@@ -136,23 +138,26 @@
         </div>
     </footer>
 
-    <script>
-        // JavaScript to handle independent active states for topup-options and payment-methods groups
-        document.addEventListener('DOMContentLoaded', function () {
-            function setupActiveState(groupSelector) {
-                const group = document.querySelector(groupSelector);
-                if (!group) return;
-                const buttons = group.querySelectorAll('button');
-                buttons.forEach(button => {
-                    button.addEventListener('click', () => {
-                        buttons.forEach(btn => btn.classList.remove('active'));
-                        button.classList.add('active');
+        <script>
+            // JavaScript to handle independent active states for topup-options and payment-methods groups
+            document.addEventListener('DOMContentLoaded', function () {
+                function setupActiveState(groupSelector) {
+                    const group = document.querySelector(groupSelector);
+                    if (!group) return;
+                    const labels = group.querySelectorAll('label');
+                    labels.forEach(label => {
+                        const input = label.querySelector('input[type="radio"]');
+                        label.addEventListener('click', () => {
+                            labels.forEach(lbl => lbl.classList.remove('active'));
+                            if (input.checked) {
+                                label.classList.add('active');
+                            }
+                        });
                     });
-                });
-            }
-            setupActiveState('.topup-options');
-            setupActiveState('.payment-methods');
-        });
-    </script>
+                }
+                setupActiveState('.topup-options');
+                setupActiveState('.payment-methods');
+            });
+        </script>
 </body>
 </html>
