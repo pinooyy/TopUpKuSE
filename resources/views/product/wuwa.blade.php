@@ -38,16 +38,16 @@
     </div>
 
     <section class="banner-container">
-        <img class="banner-blur" src="../Assets SoftEng/wuwa_banner.png" alt="Background Blur">
+        <img class="banner-blur" src="../Assets SoftEng/wuwa_banner.jpg" alt="Background Blur">
         <div class="banner">
-            <img src="../Assets SoftEng/wuwa_banner.png" alt="Banner Wuthering Waves">
+            <img src="../Assets SoftEng/wuwa_banner.jpg" alt="Banner Wuthering Waves">
         </div>
     </section>
     
     <div class="container">
         <div class="product-info">
             <h1>WUTHERING WAVES (VIA UID)</h1>
-            <p>TopUpKu menyediakan topup Wuthering Waves legal via UID untuk semua platform yang tersedia.</p>
+            <p>TopUpKu menyediakan topup Wuthering Waves 100% legal via UID untuk semua platform.</p>
             @include('product.rating-box', [
                 'averageRating' => $averageRating,
                 'totalReviews' => $totalReviews,
@@ -86,6 +86,7 @@
                 <input type="hidden" name="status" value="Pending">
                 <input type="hidden" name="order_date" value="{{ date('Y-m-d') }}">
             </div>
+
             <script>
                 document.addEventListener('DOMContentLoaded', function () {
                     const radios = document.querySelectorAll('input[name="quantity"]');
@@ -102,6 +103,7 @@
                     });
                 });
             </script>
+
             <h2>3. PILIH METODE PEMBAYARAN</h2>
             <div class="payment-methods">
                 <label><input type="radio" name="payment_method" value="QRIS" required> QRIS</label>
@@ -109,6 +111,7 @@
                 <label><input type="radio" name="payment_method" value="OVO" required> OVO</label>
                 <label><input type="radio" name="payment_method" value="DANA" required> DANA</label>
             </div>
+
             <h2>4. MASUKKAN NOMOR WHATSAPP</h2>
             <input type="text" name="whatsapp_number" placeholder="Masukkan Nomor WhatsApp Anda" required>
             <div>
@@ -132,8 +135,29 @@
                 <a href="https://wa.me/" target="_blank"><i class="fab fa-whatsapp"></i></a>
                 <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
             </div>
+            <p>copyright @2025 - TopUpKu | design by Kelompok 7</p>
         </div>
     </footer>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            function setupActiveState(groupSelector) {
+                const group = document.querySelector(groupSelector);
+                if (!group) return;
+                const labels = group.querySelectorAll('label');
+                labels.forEach(label => {
+                    const input = label.querySelector('input[type="radio"]');
+                    label.addEventListener('click', () => {
+                        labels.forEach(lbl => lbl.classList.remove('active'));
+                        if (input.checked) {
+                            label.classList.add('active');
+                        }
+                    });
+                });
+            }
+            setupActiveState('.topup-options');
+            setupActiveState('.payment-methods');
+        });
+    </script>
 </body>
 </html>
