@@ -63,11 +63,11 @@
                 <img src='Assets SoftEng/TOPUPKU_LOGO_WHITE.png' alt="TopUpKu_Logo_White">
             </div>
             <div class="video-text">
-            @if (Auth::check())
+            {{-- @if (Auth::check())
             <h2>Selamat datang, {{ Auth::user()->username }}</h2>
             @else
         <h2>Silakan login</h2>
-            @endif
+            @endif --}}
 
 
                 <h1>Level Up Instan!</h1>
