@@ -22,10 +22,10 @@ class ProductController extends Controller
 
     public function show($game_name)
     {
-        $products = Product::where('game_name', $game_name)
-            ->select('currency', 'quantity', DB::raw('MIN(price) as price'))
-            ->groupBy('currency', 'quantity')
-            ->get();
+       $products = Product::where('game_name', $game_name)
+        ->select('currency', 'quantity', DB::raw('MIN(price) as price'), 'image_url')
+        ->groupBy('currency', 'quantity', 'image_url')
+        ->get();
 
         $key = strtolower($game_name);
 

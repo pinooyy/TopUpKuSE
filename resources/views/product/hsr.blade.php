@@ -43,7 +43,7 @@
             <img src="../Assets SoftEng/hsr_banner.jpg" alt="Banner Honkai Star Rail">
         </div>
     </section>
-    
+
     <div class="container">
         <div class="product-info">
             <h1>HONKAI STAR RAIL (VIA UID)</h1>
@@ -69,6 +69,7 @@
                 <option value="Europe">Europe</option>
                 <option value="TW, HK, MO">TW, HK, MO</option>
             </select>
+
             <h2>2. PILIH NOMINAL TOP UP</h2>
             <div class="topup-options">
                 @foreach ($products as $product)
@@ -86,6 +87,7 @@
                 <input type="hidden" name="status" value="Pending">
                 <input type="hidden" name="order_date" value="{{ date('Y-m-d') }}">
             </div>
+
             <script>
                 document.addEventListener('DOMContentLoaded', function () {
                     const radios = document.querySelectorAll('input[name="quantity"]');
@@ -100,8 +102,26 @@
                             totalPaymentInput.value = radio.getAttribute('data-price');
                         });
                     });
+
+                    function setupActiveState(groupSelector) {
+                        const group = document.querySelector(groupSelector);
+                        if (!group) return;
+                        const labels = group.querySelectorAll('label');
+                        labels.forEach(label => {
+                            const input = label.querySelector('input[type="radio"]');
+                            label.addEventListener('click', () => {
+                                labels.forEach(lbl => lbl.classList.remove('active'));
+                                if (input.checked) {
+                                    label.classList.add('active');
+                                }
+                            });
+                        });
+                    }
+                    setupActiveState('.topup-options');
+                    setupActiveState('.payment-methods');
                 });
             </script>
+
             <h2>3. PILIH METODE PEMBAYARAN</h2>
             <div class="payment-methods">
                 <label><input type="radio" name="payment_method" value="QRIS" required> QRIS</label>
@@ -109,8 +129,10 @@
                 <label><input type="radio" name="payment_method" value="OVO" required> OVO</label>
                 <label><input type="radio" name="payment_method" value="DANA" required> DANA</label>
             </div>
+
             <h2>4. MASUKKAN NOMOR WHATSAPP</h2>
             <input type="text" name="whatsapp_number" placeholder="Masukkan Nomor WhatsApp Anda" required>
+
             <div>
                 <button type="submit" class="submit-btn">BELI!</button>
             </div>
@@ -132,8 +154,8 @@
                 <a href="https://wa.me/" target="_blank"><i class="fab fa-whatsapp"></i></a>
                 <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
             </div>
+            <p>copyright @2025 - TopUpKu | design by Kelompok 7</p>
         </div>
     </footer>
-
 </body>
 </html>
